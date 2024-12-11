@@ -1,10 +1,10 @@
 import React from 'react';
-import WomanImg from '../img/home/woman.png';
+import WomanImg from '../img/home/homePage.jpg';
 import { Link } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
-import { transition1, trasition1 } from '../transitions';
+import { transition1 } from '../transitions';
 
 
 const Home = () => {
@@ -28,6 +28,7 @@ const Home = () => {
           justify-center items-center lg:items-start'>
           <h1 className='h1'>
             Michaela <br /> Vivant
+
           </h1>
           <p className='text-[26px] lg:text-[36px]
           font-primary mb-4 lg:mb-12'>
@@ -39,7 +40,7 @@ const Home = () => {
         </motion.div>
 
         <div className='flex justify-end max-h-96
-        lg:max-h-max'>
+          lg:max-h-max'>
           <motion.div 
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -48,12 +49,13 @@ const Home = () => {
           className='relative lg:-right-40 overflow-hidden'
           >
             <motion.img
-            whileHover={{ scale: 1.1 }}
-            transition={transition1}
-            src={WomanImg} alt='' />
+              className='h-65 w-65 object-contain'
+              whileHover={{ scale: 1.1 }}
+              transition={transition1}
+              src={WomanImg} alt='' />
           </motion.div>
-        </div>
 
+        </div>
       </div>
     </div>
   </motion.section>
