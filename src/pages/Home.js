@@ -1,5 +1,5 @@
 import React from 'react';
-import WomanImg from '../img/home/homePage.jpg';
+import WomanImg from '../img/home/homePage2.png';
 import { Link } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
