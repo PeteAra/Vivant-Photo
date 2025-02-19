@@ -40,15 +40,15 @@ const About = () => {
             I take pictures for a living, both full time and on the side.
             I'm an ultrasound tech full time but I love capturing memories with
             a camera too! 
-            <b> I love Pete, I'm a hoot! </b>
+            <b> I love Pete, he's so cool! </b>
              <br />
              <br />
              I've been doing portrait photography for about
             3 years now and about a year doing weddings which I have
             absolutely loved being a part of!
           </p>
-          <Link to={'/portfolio'} className='btn'>
-          View my work
+          <Link to={'/weddings'} className='btn'>
+            View my work
           </Link>
         </motion.div>
       </div>

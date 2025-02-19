@@ -48,7 +48,7 @@ const Home = () => {
           transition={transition1}
           className='relative lg:-right-40 overflow-hidden'
           >
-            <motion.img
+          <motion.img
               className='h-65 w-65 object-contain'
               whileHover={{ scale: 1.1 }}
               transition={transition1}
