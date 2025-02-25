@@ -7,7 +7,10 @@
     @apply overflow-hidden text-primary font-secondary bg-white;
   }
   .h1 {
-    @apply text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
+    @apply text-[54px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
+  }
+  .h2 {
+    @apply text-[24px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
   }
   .section {
     @apply h-screen w-screen;
@@ -16,3 +19,15 @@
     @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
   }
 }
+
+/* html, body {
+  overflow: auto;
+} */
+
+
+
+.subnav .active {
+  border-bottom: 2px solid #964610;
+  color: #000;
+}
+

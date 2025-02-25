@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaInstagram } from "react-icons/fa";
 import {
    ImFacebook,
    ImTwitter,
@@ -10,33 +11,19 @@ import {
 
 const Socials = () => {
   return (
-    <div className='hidden xl:flex ml-24'>
+    <div className='flex items-center justify-center ml-24'>
       <ul className='flex gap-x-4'>
         <li>
-          <a href="http://www.facebook.com/michaelavivantphoto" target='_blank'>
-            <ImFacebook />
-          </a>
-        </li>
-        <li>
           <a href="http://www.instgram.com/michaelavivantphoto" target='_blank'>
-            <ImInstagram />
-          </a>
-        </li>
-        {/* <li>
-          <a href="http://www.twitter.com" target='_blank'>
-            <ImTwitter />
+            <FaInstagram className='text-xl'/>
           </a>
         </li>
         <li>
-          <a href="http://www.Pinterest.com" target='_blank'>
-            <ImPinterest />
+          <a href="http://www.facebook.com/michaelavivantphoto" target='_blank'>
+            <ImFacebook className='text-xl'/>
           </a>
         </li>
-        <li>
-          <a href="http://www.youtube.com" target='_blank'>
-            <ImYoutube />
-          </a>
-        </li> */}
+
       </ul>
     </div>
   );

@@ -15,7 +15,7 @@ const Home = () => {
     exit={{ opacity: 0 }}
     transition={transition1}
     className='section'>
-    <div className='container mx-auto h-full relative'>
+    <div className='container mx-auto h-lvh relative'>
       <div className='flex flex-col justify-center'>
 
         <motion.div 

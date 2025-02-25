@@ -8,16 +8,16 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
 
-    <header className='fixed w-full px-[30px] lg:px-[100px]
-     z-30 h-[100px] lg:h-[140px] flex items-center'>
-      <div className='flex flex-col lg:flex-row
-      lg:items-center w-full justify-between'>
+    <header className='fixed w-full px-[30px] md:px-[100px]
+     z-30 h-[100px] flex items-center bg-white'>
+      <div className='flex flex-row
+      md:items-center w-full justify-between'>
 
         <Link to={'/'} className='max-w-[100px]'>
           <img src={Logo} alt='' />
         </Link>
 
-        <nav className='hidden lg:flex gap-x-12 font-semibold'>
+        <nav className='hidden md:flex gap-x-12 font-semibold'>
           <Link 
             to={'/'}
             className='text-[#696c6d] hover:text-primary transition'>
@@ -69,6 +69,11 @@ const Header = () => {
                   </Link>
               </div>
           </div>
+          <Link 
+            to={'/blog'}
+            className='text-[#696c6d] hover:text-primary transition'>
+              Blog
+          </Link>
           <Link 
             to={'/contact'}
             className='text-[#696c6d] hover:text-primary transition'>

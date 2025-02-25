@@ -1,14 +1,11 @@
 import React from 'react';
-import Image1 from '../img/portfolio/1.png';
-import Image2 from '../img/portfolio/2.png';
-import Image3 from '../img/portfolio/3.png';
-import Image4 from '../img/portfolio/4.png';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
 import { transition1 } from '../transitions';
+import { transition2 } from '../transitions';
 
 
 const Seniors = () => {
@@ -19,73 +16,44 @@ const Seniors = () => {
       animate={{ scale: 1, y: 0 }}
       exit={{ scale: 0, y: '100%' }}
       transition={transition1}
-      className='section'
+      className='section pt-28'
     >
-      <div className='container mx-auto h-full relative'>
-        <div className='flex flex-col lg:flex-row h-full
-        items-center justify-start gap-x-24 text-center
-        lg:text-left pt-24 lg:pt-36 pb-8'>
-          {/* text */}
-          <motion.div
-            initial={{ scale: 0, y: '-80%' }}
-            animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0, y: '-80%' }}
-            transition={transition1}
-            className='flex flex-col lg:items-start'
-          >
 
-            <h1 className='h1'>Seniors</h1>
-            <p className='mb-12 max-w-sm'>
-              Lorem Ipsum is simply dummy text of the 
-              printing and typesetting industry.
-              <b> I love Pete what can I say I'm a hoot! </b>
-              Blah blah blah I have a dog named Layla.
-            </p>
-            <Link to={'/contact'} className='btn mb-[30px]
-            mx-auto lg:mx-0'>
-            Hire me
-            </Link>
-          </motion.div>
-          {/* image grid */}
-          <div className='grid grid-cols-2 lg:gap-2'>
+      <div className=' mx-auto relative flex flex-col 
+      items-center text-center'>
 
-            <div className='max-w-[250px] lg:max-w-[320]
-            h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-              <img 
-              className='object-cover h-full lg:h-[220px]
-              hover:scale-110 transition-all duration-500' 
-              src={Image1} 
-              alt='' />
-            </div>
-            <div className='max-w-[250px] lg:max-w-[320]
-            h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-              <img 
-              className='object-cover h-full lg:h-[220px]
-              hover:scale-110 transition-all duration-500' 
-              src={Image2} 
-              alt='' />
-            </div>
-            <div className='max-w-[250px] lg:max-w-[320]
-            h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-              <img 
-              className='object-cover h-full lg:h-[220px]
-              hover:scale-110 transition-all duration-500' 
-              src={Image3} 
-              alt='' />
-            </div>
-            <div className='max-w-[250px] lg:max-w-[320]
-            h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-              <img 
-              className='object-cover h-full lg:h-[220px]
-              hover:scale-110 transition-all duration-500' 
-              src={Image4} 
-              alt='' />
-            </div>
-            
-          </div>
-        </div>
+        <motion.nav 
+          initial={{ scale: 0, y: '-80%' }}
+          animate={{ scale: 1, y: 0 }}
+          exit={{ scale: 0, y: '-80%' }}
+          transition={transition2}
+          className='subnav flex gap-x-8 font-semibold py-4'
+        >
+          <NavLink 
+            to={'/weddings'}
+            className={'[&.active]:text-indigo-500'}>
+              WEDDINGS
+          </NavLink>
+          <NavLink 
+            to={'/families'}
+            className={'[&.active]:text-indigo-500'}>
+              FAMILIES
+          </NavLink>
+          <NavLink 
+            to={'/seniors'}
+            className={'[&.active]:text-indigo-500'}>
+              SENIORS
+          </NavLink>
+          <NavLink 
+            to={'/soudoir'}
+            className={'[&.active]:text-indigo-500'}>
+              BOUDOIR
+          </NavLink>
+        </motion.nav>
+
+        <embed className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/tannerseniorpics/" />
+
       </div>
-
     </motion.section>
   );
 };
