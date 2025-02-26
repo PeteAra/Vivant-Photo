@@ -13,7 +13,7 @@ const Header = () => {
       <div className='flex flex-row
       md:items-center w-full justify-between'>
 
-        <Link to={'/'} className='max-w-[100px]'>
+        <Link to={'/'} className='flash max-w-[100px] bg-white'>
           <img src={Logo} alt='' />
         </Link>
 
@@ -28,19 +28,16 @@ const Header = () => {
             className='text-[#696c6d] hover:text-primary transition'>
               About
           </Link>
-          <div className="group relative cursor-pointer">
+          <Link to={'/weddings'} className="menu-hover text-base block border-none
+              font-semibold text-[#696c6d] hover:text-primary transition">
+              Portfolio
+          </Link>
 
+          {/* <div className="group relative cursor-pointer">
               <Link to={'/weddings'} className="menu-hover text-base block border-none
                 font-semibold text-[#696c6d] hover:text-primary transition">
-                Galleries
+                Portfolio
               </Link>
-              {/* <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" className="h-4 w-4">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-              </span> */}
-
               <div className="invisible absolute z-50 flex flex-col bg-gray-100 w-fit rounded-md
                py-1 px-5 text-gray-800 shadow-xl group-hover:visible transition">
                   <Link 
@@ -68,7 +65,8 @@ const Header = () => {
                     Boudoir
                   </Link>
               </div>
-          </div>
+          </div> */}
+
           <Link 
             to={'/blog'}
             className='text-[#696c6d] hover:text-primary transition'>

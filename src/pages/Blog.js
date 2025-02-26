@@ -23,11 +23,6 @@ const About = () => {
       items-center justify-center gap-x-24 text-center
       lg:text-left lg:pt-16'>
 
-        <div className='flex-1 max-h-96 lg:max-h-max
-        order-2 lg:order-none overflow-hidden'>
-          <img src={WomanImg} alt='' />
-        </div>
-
         <motion.div
         initial={{ scale: 0, y: '-80%' }}
         animate={{ scale: 1, y: 0 }}

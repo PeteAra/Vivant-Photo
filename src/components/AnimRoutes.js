@@ -20,7 +20,7 @@ const AnimRoutes = () => {
     <Routes key={location.pathname} location={location}>
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
-      <Route path='/about' element={<SubNav />} />
+      <Route path='/SubNav' element={<SubNav />} />
       <Route path='/weddings' element={<Weddings />} />
       <Route path='/families' element={<Families />} />
       <Route path='/seniors' element={<Seniors />} />

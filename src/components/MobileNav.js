@@ -34,7 +34,7 @@ const MobileNav = () => {
         variants={menuVariants} 
         initial='hidden'
         animate={openMenu ? 'show' : ''}
-        className='bg-white shadow-2xl w-full absolute
+        className='bg-orange-100 shadow-2xl w-full absolute
         top-0 right-0 max-w-xs h-screen z-20'>
 
         <div 
@@ -45,8 +45,8 @@ const MobileNav = () => {
         </div>
 
         <ul className='h-full flex flex-col justify-center
-        items-center gap-y-8 text-primary font-primary 
-        font-bold text-3xl'>
+        items-center gap-y-14 text-primary font-primary 
+        font-bold text-4xl'>
           <li>
             <Link to='/'>Home</Link>
           </li>
@@ -54,16 +54,10 @@ const MobileNav = () => {
             <Link to='/about'>About</Link>
           </li>
           <li>
-            <Link to='/weddings'>Weddings</Link>
+            <Link to='/weddings'>Portfolio</Link>
           </li>
           <li>
-            <Link to='/families'>Families</Link>
-          </li>
-          <li>
-            <Link to='/seniors'>Seniors</Link>
-          </li>
-          <li>
-            <Link to='/boudoir'>Boudoir</Link>
+            <Link to='/blog'>blog</Link>
           </li>
           <li>
             <Link to='/contact'>Contact</Link>

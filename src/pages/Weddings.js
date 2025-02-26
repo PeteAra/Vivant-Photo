@@ -1,11 +1,8 @@
 import React from 'react';
 import SubNav from '../components/SubNav';
-import { NavLink } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
-
 import { transition1 } from '../transitions';
-import { transition2 } from '../transitions';
 
 
 const Weddings = () => {
@@ -16,7 +13,7 @@ const Weddings = () => {
       animate={{ scale: 1, y: 0 }}
       exit={{ scale: 0, y: '100%' }}
       transition={transition1}
-      className='section pt-28'
+      className='section'
     >
 
       {/* <motion.div
@@ -36,8 +33,10 @@ const Weddings = () => {
 
       <div className=' mx-auto relative flex flex-col 
       items-center text-center'>
-
-        <SubNav />
+        
+        <div className=''>
+          <SubNav />
+        </div>
 
         <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/tannerseniorpics/" />
 

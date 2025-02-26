@@ -24,10 +24,47 @@
   overflow: auto;
 } */
 
-
-
 .subnav .active {
   border-bottom: 2px solid #964610;
   color: #000;
 }
 
+.flash:hover {
+  animation: flash .5s ease-in-out;
+  -webkit-animation: flash .5s ease-in-out;
+  -moz-animation: flash .5s ease-in-out;
+}
+
+@-webkit-keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}

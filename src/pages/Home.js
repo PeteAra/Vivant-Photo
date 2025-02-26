@@ -1,5 +1,5 @@
 import React from 'react';
-import WomanImg from '../img/home/homePage2.png';
+import WomanImg from '../img/home/woman.png';
 import { Link } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
@@ -39,8 +39,8 @@ const Home = () => {
           </Link>
         </motion.div>
 
-        <div className='flex justify-end max-h-96
-          lg:max-h-max'>
+        <div className='flex justify-end max-h-56
+          md:max-h-max'>
           <motion.div 
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -49,7 +49,7 @@ const Home = () => {
           className='relative lg:-right-40 overflow-hidden'
           >
           <motion.img
-              className='h-65 w-65 object-contain'
+              // className='h-65 w-65 object-contain'
               whileHover={{ scale: 1.1 }}
               transition={transition1}
               src={WomanImg} alt='' />
