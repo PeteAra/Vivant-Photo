@@ -11,7 +11,7 @@ const Boudoir = () => {
       animate={{ scale: 1, y: 0 }}
       exit={{ scale: 0, y: '100%' }}
       transition={transition1}
-      className='section pt-28'
+      className='section bg-orange-100'
     >
       <div className=' mx-auto relative flex flex-col 
       items-center text-center'>

@@ -11,8 +11,8 @@ const SubNav = () => {
 
   return (
 
-    <div className='z-10 size-fit px-20 bg-orange-100 rounded-2xl flex flex-row 
-    items-center text-center mt-28'>
+    <div className='z-10 size-fit px-20 bg-white rounded-t-2xl flex flex-row 
+    items-center text-center mt-24'>
       <motion.nav 
       initial={{ scale: 0, y: '-80%' }}
       animate={{ scale: 1, y: 0 }}
