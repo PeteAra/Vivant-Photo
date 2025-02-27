@@ -21,11 +21,6 @@ const Header = () => {
           <Link 
             to={'/'}
             className='text-[#696c6d] hover:text-primary transition'>
-              Home
-          </Link>
-          <Link 
-            to={'/about'}
-            className='text-[#696c6d] hover:text-primary transition'>
               About
           </Link>
           <Link to={'/weddings'} className="menu-hover text-base block border-none
@@ -68,14 +63,14 @@ const Header = () => {
           </div> */}
 
           <Link 
-            to={'/blog'}
+            to={'/pricing'}
             className='text-[#696c6d] hover:text-primary transition'>
-              Blog
+              Pricing
           </Link>
           <Link 
-            to={'/contact'}
+            to={'/inquire'}
             className='text-[#696c6d] hover:text-primary transition'>
-              Contact
+              Inquire
           </Link>
         </nav>
         <Socials />

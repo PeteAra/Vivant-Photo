@@ -40,17 +40,6 @@ const SubNav = () => {
 
           <button className={'text-[#964610] hover:text-primary transition'} onClick={handleClick}>BOUDOIR</button>
           {isOpen && <div>BOUDOIR</div>} */}
-
-          <NavLink 
-          to={'/weddings'}
-          className={'text-[#964610] hover:text-primary transition'}>
-              WEDDINGS
-          </NavLink>
-          <NavLink 
-          to={'/Engagement'}
-          className={'text-[#964610] hover:text-primary transition'}>
-              ENGAGEMENT
-          </NavLink>
           <NavLink 
           to={'/families'}
           className={'text-[#964610] hover:text-primary transition'}>
@@ -60,6 +49,16 @@ const SubNav = () => {
           to={'/seniors'}
           className={'text-[#964610] hover:text-primary transition'}>
               SENIORS
+          </NavLink>
+          <NavLink 
+          to={'/weddings'}
+          className={'text-[#964610] hover:text-primary transition'}>
+              WEDDINGS
+          </NavLink>
+          <NavLink 
+          to={'/Engagement'}
+          className={'text-[#964610] hover:text-primary transition'}>
+              ENGAGEMENT
           </NavLink>
           <NavLink 
           to={'/Boudoir'}

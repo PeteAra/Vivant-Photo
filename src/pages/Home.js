@@ -1,5 +1,6 @@
 import React from 'react';
-import WomanImg from '../img/home/woman.png';
+import WomanImg from '../img/home/aboutPage.jpg';
+
 import { Link } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
@@ -10,37 +11,50 @@ import { transition1 } from '../transitions';
 const Home = () => {
   return (
   <motion.section 
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={transition1}
-    className='section'>
-    <div className='container mx-auto h-lvh relative'>
-      <div className='flex flex-col justify-center'>
+  initial={{ scale: 0, y: '100%' }}
+  animate={{ scale: 1, y: 0 }}
+  exit={{ scale: 0, y: '100%' }}
+  transition={transition1}
+  className='section'>
+    <div className='container mx-auto h-full relative'>
+      
+      <div className='flex flex-col lg:flex-row
+      items-center justify-center text-center
+      lg:text-left lg:pt-16'>
 
-        <motion.div 
-          initial={{ opacity: 0, y: '-50%' }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0,  y: '-50%' }}
-          transition={transition1}
-          className='w-full pt-36 pb-14 lg:pt-0 lg:pb-0
-          lg:w-auto z-10 lg:absolute flex flex-col
-          justify-center items-center lg:items-start'>
+        <motion.div
+        initial={{ scale: 0, y: '-80%' }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0, y: '-80%' }}
+        transition={transition1}
+        className=' pt-36 pb-14 lg:pt-0
+        lg:w-auto z-5 flex flex-col justify-center
+        items-center lg:items-start'>
           <h1 className='h1'>
             Michaela <br /> Vivant
-
           </h1>
           <p className='text-[26px] lg:text-[36px]
           font-primary mb-4 lg:mb-12'>
             Minneapolis, MN
           </p>
-          <Link to={'/contact'} className='btn mb-[30px]'>
-            hire me
+          <h1 className='h1'>About me</h1>
+          <p className='mb-12 max-w-sm'>
+            I take pictures for a living, both full time and on the side.
+            I'm an ultrasound tech full time but I love capturing memories with
+            a camera too! 
+            <b> I love Pete, he's so cool! </b>
+             <br />
+             <br />
+             I've been doing portrait photography for about
+            3 years now and about a year doing weddings which I have
+            absolutely loved being a part of!
+          </p>
+          <Link to={'/weddings'} className='btn'>
+            View my work
           </Link>
         </motion.div>
 
-        <div className='flex justify-end max-h-56
-          md:max-h-max'>
+        <div className='flex justify-end '>
           <motion.div 
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -49,7 +63,7 @@ const Home = () => {
           className='relative lg:-right-40 overflow-hidden'
           >
           <motion.img
-              // className='h-65 w-65 object-contain'
+              className='size-auto object-contain'
               whileHover={{ scale: 1.1 }}
               transition={transition1}
               src={WomanImg} alt='' />

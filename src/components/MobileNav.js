@@ -48,19 +48,16 @@ const MobileNav = () => {
         items-center gap-y-14 text-primary font-primary 
         font-bold text-4xl'>
           <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/about'>About</Link>
+            <Link to='/'>About</Link>
           </li>
           <li>
             <Link to='/weddings'>Portfolio</Link>
           </li>
           <li>
-            <Link to='/blog'>blog</Link>
+            <Link to='/pricing'>Pricing</Link>
           </li>
           <li>
-            <Link to='/contact'>Contact</Link>
+            <Link to='/inquire'>Inquire</Link>
           </li>
         </ul>
 

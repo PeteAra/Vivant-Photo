@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { transition1 } from '../transitions';
 
-const Contact = () => {
+const Inquire = () => {
   return (
 
   <motion.section 
@@ -82,4 +82,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Inquire;
