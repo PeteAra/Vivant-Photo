@@ -38,7 +38,7 @@ const Weddings = () => {
           <SubNav />
         </div>
 
-        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/tannerseniorpics/" />
+        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/weddingportfolio/" />
 
         {/* <div className='sm:columns-2 md:columns-3 lg:columns-4 mx-3'>
           <div className='max-w-[250px] lg:max-w-[320] rounded-lg

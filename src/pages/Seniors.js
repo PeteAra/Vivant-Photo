@@ -17,7 +17,7 @@ const Seniors = () => {
       items-center text-center'>
 
         <SubNav />
-        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/tannerseniorpics/" />
+        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/familiesportfoliocopy/" />
       </div>
     </motion.section>
   );

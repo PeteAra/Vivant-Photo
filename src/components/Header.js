@@ -9,7 +9,7 @@ const Header = () => {
   return (
 
     <header className='fixed w-full px-[30px] md:px-[100px]
-     z-30 h-[81px] flex items-center bg-white'>
+     z-30 h-[100px] flex items-center bg-white'>
       <div className='flex flex-row
       md:items-center w-full justify-between'>
 

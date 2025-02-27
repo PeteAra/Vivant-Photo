@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
 
 
-const Boudoir = () => {
+const Engagement = () => {
   return (
     <motion.section 
       initial={{ scale: 0, y: '100%' }}
@@ -17,10 +17,10 @@ const Boudoir = () => {
       items-center text-center'>
 
         <SubNav />
-        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/weddingportfoliocopy/" />
+        <iframe title='Engagement' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/boudoirportfoliocopy-3797/" />
       </div>
     </motion.section>
   );
 };
 
-export default Boudoir;
+export default Engagement;

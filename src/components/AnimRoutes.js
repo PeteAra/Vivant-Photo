@@ -4,6 +4,7 @@ import About from '../pages/About';
 import SubNav from './SubNav';
 import Contact from '../pages/Contact';
 import Weddings from '../pages/Weddings';
+import Engagement from '../pages/Engagement';
 import Families from '../pages/Families';
 import Seniors from '../pages/Seniors';
 import Boudoir from '../pages/Boudoir';
@@ -11,6 +12,7 @@ import Blog from '../pages/Blog';
 
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+
 
 
 const AnimRoutes = () => {
@@ -22,6 +24,7 @@ const AnimRoutes = () => {
       <Route path='/about' element={<About />} />
       <Route path='/SubNav' element={<SubNav />} />
       <Route path='/weddings' element={<Weddings />} />
+      <Route path='/engagement' element={<Engagement />} />
       <Route path='/families' element={<Families />} />
       <Route path='/seniors' element={<Seniors />} />
       <Route path='/boudoir' element={<Boudoir />} />

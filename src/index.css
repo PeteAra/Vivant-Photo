@@ -20,9 +20,9 @@
   }
 }
 
-/* html, body {
+html, body {
   overflow: auto;
-} */
+}
 
 .subnav .active {
   border-bottom: 2px solid #964610;
