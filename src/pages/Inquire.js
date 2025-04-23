@@ -1,5 +1,5 @@
 import React from 'react';
-import WomanImg from '../img/contact/woman.png';
+import inquireImg from '../img/contact/DSC08408.avif';
 
 import { motion } from 'framer-motion';
 
@@ -31,7 +31,7 @@ const Inquire = () => {
         </motion.div>
         {/* text & form */}
         <div className='lg:flex-1 lg:pt-32 px-4'>
-          <h1 className='h1'>Contact Me</h1>
+          <h1 className='h1'>Contact</h1>
           <p className='mb-12'>Put on your french maid outfit</p>
           <form className='flex flex-col gap-y-4'> 
             <div className='flex gap-x-10'>
@@ -74,7 +74,7 @@ const Inquire = () => {
           transition={{ transition: transition1, duration: 1.5 }}
           className='lg:flex-1'
         >
-          <img src={WomanImg} alt='' />
+          <img src={inquireImg} alt='' />
         </motion.div>
       </div>
     </div>

@@ -27,7 +27,7 @@ const Home = () => {
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0, y: '-80%' }}
         transition={transition1}
-        className=' pt-36 pb-14 lg:pt-0
+        className='pb-14 lg:pt-0
         lg:w-auto z-5 flex flex-col justify-center
         items-center lg:items-start'>
           <h1 className='h1'>
@@ -37,7 +37,6 @@ const Home = () => {
           font-primary mb-4 lg:mb-12'>
             Minneapolis, MN
           </p>
-          <h1 className='h1'>About me</h1>
           <p className='mb-12 max-w-sm'>
             I take pictures for a living, both full time and on the side.
             I'm an ultrasound tech full time but I love capturing memories with

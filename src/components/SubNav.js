@@ -1,77 +1,54 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { NavLink } from 'react-router-dom';
 import { transition2 } from '../transitions';
 
-import { NavLink } from 'react-router-dom';
-
-
 const SubNav = () => {
-
-  // const [isOpen, setOpen] = React.useState(false);
-
-  // const handleClick = () => {
-  //   setOpen(!isOpen);
-  // };
-
   return (
-
-    <div className='z-10 size-fit px-20 bg-white rounded-t-2xl flex flex-row 
-    items-center text-center mt-28'>
-      <motion.nav 
-      initial={{ scale: 0, y: '-80%' }}
-      animate={{ scale: 1, y: 0 }}
-      exit={{ scale: 0, y: '-80%' }}
+    <motion.nav
+      className="z-10 w-full px-4 sm:px-20 bg-orange-300 flex flex-row items-center justify-center gap-x-4 sm:gap-x-8 font-semibold py-2 fixed top-[70px] subnav"
+      initial={{ opacity: 0, y: -40 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -40 }}
       transition={transition2}
-      className='subnav flex gap-x-8 font-semibold py-4'
+    >
+      <NavLink
+        to="/families"
+        className="text-[#964610] hover:text-primary transition"
+        aria-label="View Families Portfolio"
       >
-          {/* <button className={'text-[#964610] hover:text-primary transition'} onClick={handleClick}>WEDDINGS</button>
-          {isOpen && <div>WEDDINGS</div>}
-
-          <button className={'text-[#964610] hover:text-primary transition'} onClick={handleClick}>FAMILIES</button>
-          {isOpen && <div>FAMILIES</div>}
-
-          <button className={'text-[#964610] hover:text-primary transition'} onClick={handleClick}>SENIORS</button>
-          {isOpen && <div>SENIORS</div>}
-
-          <button className={'text-[#964610] hover:text-primary transition'} onClick={handleClick}>BOUDOIR</button>
-          {isOpen && <div>BOUDOIR</div>}
-
-          <button className={'text-[#964610] hover:text-primary transition'} onClick={handleClick}>BOUDOIR</button>
-          {isOpen && <div>BOUDOIR</div>} */}
-          <NavLink 
-          to={'/families'}
-          className={'text-[#964610] hover:text-primary transition'}>
-              FAMILIES
-          </NavLink>
-          <NavLink 
-          to={'/seniors'}
-          className={'text-[#964610] hover:text-primary transition'}>
-              SENIORS
-          </NavLink>
-          <NavLink 
-          to={'/weddings'}
-          className={'text-[#964610] hover:text-primary transition'}>
-              WEDDINGS
-          </NavLink>
-          <NavLink 
-          to={'/Engagement'}
-          className={'text-[#964610] hover:text-primary transition'}>
-              ENGAGEMENT
-          </NavLink>
-          <NavLink 
-          to={'/Boudoir'}
-          className={'text-[#964610] hover:text-primary transition'}>
-              BOUDOIR
-          </NavLink>
-      </motion.nav>
-    </div>
-
+        FAMILIES
+      </NavLink>
+      <NavLink
+        to="/seniors"
+        className="text-[#964610] hover:text-primary transition"
+        aria-label="View Seniors Portfolio"
+      >
+        SENIORS
+      </NavLink>
+      <NavLink
+        to="/weddings"
+        className="text-[#964610] hover:text-primary transition"
+        aria-label="View Weddings Portfolio"
+      >
+        WEDDINGS
+      </NavLink>
+      <NavLink
+        to="/engagement"
+        className="text-[#964610] hover:text-primary transition"
+        aria-label="View Engagement Portfolio"
+      >
+        ENGAGEMENT
+      </NavLink>
+      <NavLink
+        to="/boudoir"
+        className="text-[#964610] hover:text-primary transition"
+        aria-label="View Boudoir Portfolio"
+      >
+        BOUDOIR
+      </NavLink>
+    </motion.nav>
   );
 };
 
 export default SubNav;
-
-
-

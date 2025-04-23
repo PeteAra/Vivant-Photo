@@ -1,25 +1,38 @@
 import React from 'react';
-import SubNav from '../components/SubNav';
 import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
+import SubNav from '../components/SubNav';
+import { AnimatePresence } from 'framer-motion';
 
 
 const Families = () => {
-  return (
-    <motion.section 
-      initial={{ scale: 0, y: '100%' }}
-      animate={{ scale: 1, y: 0 }}
-      exit={{ scale: 0, y: '100%' }}
-      transition={transition1}
-      className='section bg-orange-100'
-    >
-      <div className=' mx-auto relative flex flex-col 
-      items-center text-center'>
 
-        <SubNav />
-        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/engagementsportfoliocopy/" />
-      </div>
-    </motion.section>
+  return (
+    <section className="section">
+      
+      <AnimatePresence mode="wait">
+        <SubNav key="subnav" />
+      </AnimatePresence>
+
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0, opacity: 0 }}
+        transition={transition1}
+      >
+        <div className="iframe-container"
+        >
+          <iframe
+            title="Families Portfolio"
+            loading="lazy"
+            className="w-full h-full "
+            src="https://michaelavivantphoto.pixieset.com/families/"
+            allow="fullscreen"
+            aria-label="Families photography portfolio"
+          />
+        </div>
+      </motion.div>
+    </section>
   );
 };
 

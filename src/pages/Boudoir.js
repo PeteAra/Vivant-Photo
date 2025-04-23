@@ -17,7 +17,7 @@ const Boudoir = () => {
       items-center text-center'>
 
         <SubNav />
-        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/weddingportfoliocopy/" />
+        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/boudoir/" />
       </div>
     </motion.section>
   );
