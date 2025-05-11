@@ -1,25 +1,31 @@
 import React from 'react';
-import SubNav from '../components/SubNav';
 import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
-
+import SubNav from '../components/SubNav';
 
 const Boudoir = () => {
-  return (
-    <motion.section 
-      initial={{ scale: 0, y: '100%' }}
-      animate={{ scale: 1, y: 0 }}
-      exit={{ scale: 0, y: '100%' }}
-      transition={transition1}
-      className='section bg-orange-100'
-    >
-      <div className=' mx-auto relative flex flex-col 
-      items-center text-center'>
 
-        <SubNav />
-        <iframe title='Weddings' className='w-full h-screen' src="https://michaelavivantphoto.pixieset.com/boudoir/" />
-      </div>
-    </motion.section>
+  return (
+    <section className="section">
+      <SubNav key="subnav" />
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0, opacity: 0 }}
+        transition={transition1}
+      >
+        <div className="iframe-container">
+          <iframe
+            title="Boudoir Portfolio"
+            loading="lazy"
+            className="w-full h-full"
+            src="https://michaelavivantphoto.pixieset.com/boudoir/"
+            allow="fullscreen"
+            aria-label="Boudoir portfolio"
+          />
+        </div>
+      </motion.div>
+    </section>
   );
 };
 

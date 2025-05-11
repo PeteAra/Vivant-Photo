@@ -11,12 +11,12 @@ const Header = () => {
       aria-label="Main navigation"
     >
       <div className="flex flex-row md:items-center w-full justify-between">
-        <Link to="/" className="flash w-[80px]">
+        <Link to="/" className="flash w-[100px]">
           <img src={Logo} alt="Michaela Vivant Logo" />
         </Link>
         <nav className="hidden md:flex gap-x-12 font-semibold">
           <Link
-            to="/about"
+            to="/"
             className="text-[#696c6d] hover:text-primary transition"
           >
             About

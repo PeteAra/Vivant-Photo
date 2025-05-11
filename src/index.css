@@ -8,28 +8,45 @@
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow-y: hidden;
+    overflow-x: hidden;
   }
+
   .h1 {
     @apply text-[54px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
   }
+
   .h2 {
     @apply text-[24px] md:text-[48px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
   }
+
   .section {
     @apply w-screen;
     position: relative;
     min-height: 100vh;
   }
+
+  .innerCon {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    max-height: calc(100vh - var(--header-height));
+    overflow-y: auto; /* Enable scrolling */
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
   .btn {
     @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
   }
+
   .iframe-container {
     @apply w-full;
     position: absolute;
-    top: 120px;
-    height: calc(100vh - 120px);
+    top: 110px;
+    height: calc(100vh - 110px);
   }
+
   .iframe-container iframe {
     display: block;
     width: 100%;
@@ -37,7 +54,7 @@
     overflow-y: auto;
   }
 
-  .no-scrollbar {
+  /* .no-scrollbar {
     scrollbar-width: none;
   }
   .no-scrollbar::-webkit-scrollbar {
@@ -45,7 +62,7 @@
   }
   .pointer-events-none {
     pointer-events: none;
-  }
+  } */
 }
 
 :root {
@@ -54,16 +71,19 @@
 }
 
 .header-css {
-  background-color: #964610;
+  background-color: #f2e6d5;
 }
 
-.subnav .active {
-  height: var(--subnav-height);
-}
+.subnav {
+  /* background-image: linear-gradient(#d4d4d4, #fff); */
+  background-color: #ffb74d;
+  border-radius: 0 0 50% 50%;
+} 
 
 .subnav .active {
   border-bottom: 2px solid #964610;
   color: #000;
+  
 }
 
 .subnav a:focus {
@@ -80,10 +100,41 @@
 }
 
 .flash:hover {
-  animation: subtle-flash 0.5s ease-in-out;
+  animation: flash .5s ease-in-out;
+  -webkit-animation: flash .5s ease-in-out;
+  -moz-animation: flash .5s ease-in-out;
 }
 
-@keyframes subtle-flash {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+@-webkit-keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
 }
