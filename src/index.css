@@ -4,25 +4,75 @@
 
 @layer base {
   body, html {
-    @apply text-primary font-secondary bg-white;
+    @apply text-primary font-two bg-white;
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
+  }
+
+  @font-face {
+    font-family: 'Nectarine';
+    src: url('../public/fonts/Nectarine.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Last Dream';
+    src: url('../public/fonts/LastDream.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'TheAugusta';
+    src: url('../public/fonts/TheAugusta.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'spathaserif';
+    src: url('../public/fonts/spathaserif.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Valenzka';
+    src: url('../public/fonts/Valenzka.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Bagife';
+    src: url('../public/fonts/Bagife.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'RolieTwily';
+    src: url('../public/fonts/RolieTwily.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
   }
 
   .h1 {
-    @apply text-[54px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
+    @apply text-[54px] font-seven capitalize leading-[120%] tracking-[-0.0005em] mb-2;
   }
 
   .h2 {
-    @apply text-[24px] md:text-[48px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
+    @apply text-[24px] md:text-[48px] lg:text-[108px] font-one font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
   }
 
   .section {
     @apply w-screen;
     position: relative;
-    min-height: 100vh;
+    min-height: calc(100vh - var(--header-height));
   }
 
   .innerCon {
@@ -31,20 +81,44 @@
     justify-self: center;
     align-self: center;
     max-height: calc(100vh - var(--header-height));
-    overflow-y: auto; /* Enable scrolling */
+    overflow-y: auto;
     overflow-x: hidden;
     box-sizing: border-box;
   }
 
+  .innerCon-no-scroll {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    box-sizing: border-box;
+    max-height: calc(100vh - var(--header-height));
+  }
+
   .btn {
-    @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
+    @apply py-[12px] px-[50px] h-[66px] flex items-center justify-center text-2xl uppercase font-one tracking-widest;
+    background-color: #ffb74d;
+    color: #964610;
+    border-radius: 20px;
+    box-shadow: -1px 3px 0px 1px #964610;
+    transition: all 0.25s ease;
+  }
+
+  .btn:hover {
+    box-shadow: -0.5px 1px 0px 1px #964610;
+  }
+
+  .btn:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: -0.5px 1px 0px 0.5px #964610, inset 0 2px 4px rgba(150, 70, 16, 0.3);
+    filter: brightness(0.9);
   }
 
   .iframe-container {
     @apply w-full;
     position: absolute;
-    top: 110px;
-    height: calc(100vh - 110px);
+    top: 95px;
+    height: calc(100vh - 95px);
   }
 
   .iframe-container iframe {
@@ -53,16 +127,6 @@
     height: 100%;
     overflow-y: auto;
   }
-
-  /* .no-scrollbar {
-    scrollbar-width: none;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .pointer-events-none {
-    pointer-events: none;
-  } */
 }
 
 :root {
@@ -75,15 +139,14 @@
 }
 
 .subnav {
-  /* background-image: linear-gradient(#d4d4d4, #fff); */
   background-color: #ffb74d;
   border-radius: 0 0 50% 50%;
-} 
+  border-bottom: #964610 4px solid;
+}
 
 .subnav .active {
   border-bottom: 2px solid #964610;
   color: #000;
-  
 }
 
 .subnav a:focus {
@@ -106,35 +169,26 @@
 }
 
 @-webkit-keyframes flash {
-  0%,
-  50%,
-  100% {
+  0%, 50%, 100% {
     opacity: 1;
   }
-  25%,
-  75% {
+  25%, 75% {
     opacity: 0;
   }
 }
 @-moz-keyframes flash {
-  0%,
-  50%,
-  100% {
+  0%, 50%, 100% {
     opacity: 1;
   }
-  25%,
-  75% {
+  25%, 75% {
     opacity: 0;
   }
 }
 @keyframes flash {
-  0%,
-  50%,
-  100% {
+  0%, 50%, 100% {
     opacity: 1;
   }
-  25%,
-  75% {
+  25%, 75% {
     opacity: 0;
   }
 }

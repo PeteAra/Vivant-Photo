@@ -1,6 +1,4 @@
-import React from 'react';
-import About from '../pages/About';
-import SubNav from './SubNav';
+import Home from '../pages/Home';
 import Inquire from '../pages/Inquire';
 import Weddings from '../pages/Weddings';
 import Engagement from '../pages/Engagement';
@@ -16,7 +14,7 @@ const AnimRoutes = () => {
   return (
     <AnimatePresence initial={true} mode="wait">
       <Routes key={location.pathname} location={location}>
-        <Route path="/" element={<About />} />
+        <Route path="/" element={<Home />} />
         <Route path="/weddings" element={<Weddings />} />
         <Route path="/engagement" element={<Engagement />} />
         <Route path="/families" element={<Families />} />

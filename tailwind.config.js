@@ -1,9 +1,15 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js}'],
+  content: ['./src/**/*.{js,html}'],
   theme: {
     fontFamily: {
-      primary: 'Playfair Display',
-      secondary: 'Mulish',
+      one: ['Nectarine', 'sans-serif'],
+      two: ['Last Dream', 'sans-serif'],
+      three: ['spathaserif', 'sans-serif'],
+      four: ['Valenzka', 'sans-serif'],
+      five: ['TheAugusta', 'sans-serif'],
+      six: ['Bagife', 'sans-serif'],
+      seven: ['RolieTwily', 'sans-serif']
     },
     screens: {
       sm: '640px',

@@ -1,8 +1,5 @@
-import React from 'react';
 import inquireImg from '../img/contact/DSC08408.avif';
-
 import { motion } from 'framer-motion';
-
 import { transition1 } from '../transitions';
 
 const Inquire = () => {
@@ -40,7 +37,7 @@ const Inquire = () => {
                   <input
                     className='outline-none border-b
                     border-b-primary h-[60px] bg-transparent
-                    font-secondary w-full pl-3
+                    font-two w-full pl-3
                     placeholder:text-[#757879]'
                     type='text'
                     placeholder='You name'
@@ -48,7 +45,7 @@ const Inquire = () => {
                   <input
                     className='outline-none border-b
                     border-b-primary h-[60px] bg-transparent
-                    font-secondary w-full pl-3
+                    font-two w-full pl-3
                     placeholder:text-[#757879]'
                     type='text'
                     placeholder='Your email address'
@@ -57,7 +54,7 @@ const Inquire = () => {
                 <input
                     className='outline-none border-b
                     border-b-primary h-[60px] bg-transparent
-                    font-secondary w-full pl-3
+                    font-two w-full pl-3
                     placeholder:text-[#757879]'
                     type='text'
                     placeholder='Your message'

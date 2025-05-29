@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { transition2 } from '../transitions';
@@ -14,35 +13,35 @@ const SubNav = () => {
     >
       <NavLink
         to="/families"
-        className="text-[#964610] hover:text-primary transition"
+        className="text-[#964610] hover:text-white font-seven transition"
         aria-label="View Families Portfolio"
       >
         FAMILIES
       </NavLink>
       <NavLink
         to="/seniors"
-        className="text-[#964610] hover:text-primary transition"
+        className="text-[#964610] hover:text-white transition"
         aria-label="View Seniors Portfolio"
       >
         SENIORS
       </NavLink>
       <NavLink
         to="/weddings"
-        className="text-[#964610] hover:text-primary transition"
+        className="text-[#964610] hover:text-white transition"
         aria-label="View Weddings Portfolio"
       >
         WEDDINGS
       </NavLink>
       <NavLink
         to="/engagement"
-        className="text-[#964610] hover:text-primary transition"
+        className="text-[#964610] hover:text-white transition"
         aria-label="View Engagement Portfolio"
       >
         ENGAGEMENT
       </NavLink>
       <NavLink
         to="/boudoir"
-        className="text-[#964610] hover:text-primary transition"
+        className="text-[#964610] hover:text-white transition"
         aria-label="View Boudoir Portfolio"
       >
         BOUDOIR

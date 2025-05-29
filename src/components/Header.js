@@ -14,7 +14,7 @@ const Header = () => {
         <Link to="/" className="flash w-[100px]">
           <img src={Logo} alt="Michaela Vivant Logo" />
         </Link>
-        <nav className="hidden md:flex gap-x-12 font-semibold">
+        <nav className="hidden md:flex gap-x-12 font-one text-3xl">
           <Link
             to="/"
             className="text-[#696c6d] hover:text-primary transition"

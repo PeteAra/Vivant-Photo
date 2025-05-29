@@ -45,7 +45,7 @@ const MobileNav = () => {
         </div>
 
         <ul className='h-full flex flex-col justify-center
-        items-center gap-y-14 text-primary font-primary 
+        items-center gap-y-14 text-primary font-one 
         font-bold text-4xl'>
           <li>
             <Link to='/'>About</Link>
