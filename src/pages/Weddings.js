@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { transition1 } from '../transitions';
+import { transition3 } from '../transitions';
 import SubNav from '../components/SubNav';
 
 const Weddings = () => {
@@ -9,10 +9,8 @@ const Weddings = () => {
     <section className="section">
       <SubNav key="subnav" />
       <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0, opacity: 0 }}
-        transition={transition1}
+        {...transition3}
+        exit={transition3.exit}
       >
         <div className="iframe-container">
           <iframe

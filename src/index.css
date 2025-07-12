@@ -4,11 +4,16 @@
 
 @layer base {
   body, html {
-    @apply text-primary font-two bg-white;
+    @apply text-primary font-one bg-[#f2e6d5];
     margin: 0;
     padding: 0;
     height: 100vh;
     overflow: hidden;
+  }
+
+  body.allow-scroll, html.allow-scroll {
+    overflow: auto;
+    overflow-x: hidden;
   }
 
   @font-face {
@@ -60,9 +65,23 @@
     font-style: normal;
     font-display: swap;
   }
+  @font-face {
+    font-family: 'La Luxes Script';
+    src: url('../public/fonts/La Luxes Script.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'La Luxes serif';
+    src: url('../public/fonts/La Luxes Serif.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
 
   .h1 {
-    @apply text-[54px] font-seven capitalize leading-[120%] tracking-[-0.0005em] mb-2;
+    @apply text-[54px] font-one capitalize leading-[120%] tracking-[-0.0005em] mb-2;
   }
 
   .h2 {
@@ -70,7 +89,7 @@
   }
 
   .section {
-    @apply w-screen;
+    @apply w-full;
     position: relative;
     min-height: calc(100vh - var(--header-height));
   }
@@ -96,7 +115,7 @@
   }
 
   .btn {
-    @apply py-[12px] px-[50px] h-[66px] flex items-center justify-center text-2xl uppercase font-one tracking-widest;
+    @apply py-[12px] px-[30px] h-[66px] flex items-center justify-center text-3xl uppercase font-eight tracking-widest;
     background-color: #ffb74d;
     color: #964610;
     border-radius: 20px;
@@ -135,23 +154,29 @@
 }
 
 .header-css {
-  background-color: #f2e6d5;
+  background-color: #fff;
+  -moz-box-shadow: 0px 0px 15px 0px #fff;
+  -webkit-box-shadow: 0px 0px 15px 0px #fff;
+  box-shadow: 0px 0px 15px 0px #fff;
 }
 
 .subnav {
-  background-color: #ffb74d;
+  background-color: #B2DFDB ;
   border-radius: 0 0 50% 50%;
-  border-bottom: #964610 4px solid;
+  border-bottom: #FFB74D  8px solid;
 }
 
 .subnav .active {
-  border-bottom: 2px solid #964610;
+  background-color: #f2e6d5;
+  border-radius: 25%;
+  -moz-box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
+  -webkit-box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
+  box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
   color: #000;
 }
 
 .subnav a:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #964610;
 }
 
 .subnav:not([aria-hidden="true"]) {
@@ -191,4 +216,18 @@
   25%, 75% {
     opacity: 0;
   }
+}
+
+/* Custom dropdown styling */
+select option:hover,
+select option:focus,
+select option:active,
+select option:checked {
+  background-color: #FFB74D !important;
+  color: #000 !important;
+}
+
+select option {
+  background-color: #B2DFDB !important;
+  color: #000 !important;
 }

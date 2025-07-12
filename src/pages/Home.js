@@ -2,8 +2,19 @@ import WomanImg from '../img/home/aboutPage.jpg';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
+import { useEffect } from 'react';
 
 const Home = () => {
+  useEffect(() => {
+    document.body.classList.add('allow-scroll');
+    document.documentElement.classList.add('allow-scroll');
+    
+    return () => {
+      document.body.classList.remove('allow-scroll');
+      document.documentElement.classList.remove('allow-scroll');
+    };
+  }, []);
+
   return (
     <motion.section
       initial={{ scale: 0, y: '100%' }}
@@ -12,9 +23,8 @@ const Home = () => {
       transition={transition1}
       className="section"
     >
-
         <div className="innerCon-no-scroll">
-          <div className="container mx-auto h-full relative">
+          <div className="h-full relative px-4">
             <div className="flex flex-col pt-20 lg:flex-row items-center justify-center text-center lg:text-left lg:pt-16">
               <motion.div
                 initial={{ scale: 0, y: '-80%' }}
@@ -26,10 +36,10 @@ const Home = () => {
                 <h1 className="h1">
                   Michaela <br /> Vivant
                 </h1>
-                <p className="text-[26px] lg:text-[36px] tracking-widest font-two mb-4 lg:mb-12">
+                <p className="text-[26px] lg:text-[36px] tracking-widest font-three mb-4 lg:mb-12">
                   Minneapolis, MN
                 </p>
-                <p className="mb-12 max-w-sm font-three">
+                <p className="mb-12 max-w-sm font-one font-bold">
                   I take pictures for a living, both full time and on the side.
                   I'm an ultrasound tech full time but I love capturing memories with
                   a camera too! 
@@ -64,7 +74,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
     </motion.section>
   );
 };

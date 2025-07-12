@@ -3,13 +3,15 @@ module.exports = {
   content: ['./src/**/*.{js,html}'],
   theme: {
     fontFamily: {
-      one: ['Nectarine', 'sans-serif'],
-      two: ['Last Dream', 'sans-serif'],
+      one: ['La Luxes serif', 'sans-serif'],
+      two: ['La Luxes Script', 'sans-serif'],
       three: ['spathaserif', 'sans-serif'],
       four: ['Valenzka', 'sans-serif'],
       five: ['TheAugusta', 'sans-serif'],
       six: ['Bagife', 'sans-serif'],
-      seven: ['RolieTwily', 'sans-serif']
+      seven: ['RolieTwily', 'sans-serif'],
+      eight: ['Nectarine', 'sans-serif'],
+      nine: ['Last Dream', 'sans-serif']
     },
     screens: {
       sm: '640px',

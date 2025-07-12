@@ -12,3 +12,13 @@ export const transition1 = {
 
 // export const transition1 = { duration: 0.5, ease: 'easeInOut' };
 export const transition2 = { duration: 0.3, ease: 'easeInOut' };
+
+export const transition3 = {
+  initial: { opacity: 0, y: '100vh' },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: '100vh' },
+  transition: {
+    duration: 0.8,
+    ease: [0.25, 0.46, 0.45, 0.94],
+  }
+};
