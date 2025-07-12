@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
-import { CgMenuRight } from 'react-icons/cg';
+import { TiThMenu } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useSwipeable } from 'react-swipeable';
 
 const menuVariants = {
   hidden: {
@@ -20,14 +21,21 @@ const MobileNav = () => {
 
   const [openMenu, setOpenMenu] = useState(false);
 
+  const handlers = useSwipeable({
+    onSwipedRight: () => setOpenMenu(false),
+    delta: 50,
+    preventDefaultTouchmoveEvent: true,
+  });
+
   return (
     <nav className='text-primary md:hidden'>
 
       <div 
         onClick={() => setOpenMenu(true)}
-        className='text-4xl cursor-pointer absolute z-10 right-10 top-8'
+        className='text-4xl cursor-pointer absolute z-10 right-5 top-[17px]'
+        style={{ color: '#FFB74D' }}
       >
-        <CgMenuRight />
+        <TiThMenu />
       </div>
 
       <motion.div 
@@ -35,29 +43,30 @@ const MobileNav = () => {
         initial='hidden'
         animate={openMenu ? 'show' : ''}
         className='bg-orange-100 shadow-2xl w-full absolute
-        top-0 right-0 max-w-xs h-screen z-20'>
+        top-0 right-0 max-w-xs h-screen z-20'
+        {...handlers}>
 
         <div 
           onClick={() => setOpenMenu(false)}
-          className='text-4xl absolute z-30 left-4 top-14
+          className='text-4xl absolute z-30 left-4 top-5
           text-primary cursor-pointer'>
           <IoMdClose />
         </div>
 
-        <ul className='h-full flex flex-col justify-center
+        <ul className='h-full flex flex-col justify-start pt-32
         items-center gap-y-14 text-primary font-one 
         font-bold text-4xl'>
           <li>
-            <Link to='/'>About</Link>
+            <Link to='/' onClick={() => setOpenMenu(false)}>About</Link>
           </li>
           <li>
-            <Link to='/weddings'>Portfolio</Link>
+            <Link to='/weddings' onClick={() => setOpenMenu(false)}>Portfolio</Link>
           </li>
           <li>
-            <Link to='/pricing'>Pricing</Link>
+            <Link to='/pricing' onClick={() => setOpenMenu(false)}>Pricing</Link>
           </li>
           <li>
-            <Link to='/inquire'>Inquire</Link>
+            <Link to='/inquire' onClick={() => setOpenMenu(false)}>Inquire</Link>
           </li>
         </ul>
 

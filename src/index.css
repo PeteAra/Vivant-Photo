@@ -81,7 +81,7 @@
   }
 
   .h1 {
-    @apply text-[54px] font-one capitalize leading-[120%] tracking-[-0.0005em] mb-2;
+    @apply text-[54px] font-seven capitalize leading-[120%] tracking-[-0.0005em] mb-2;
   }
 
   .h2 {

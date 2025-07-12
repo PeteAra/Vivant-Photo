@@ -146,7 +146,7 @@ const Inquire = () => {
     <div className='innerCon-no-scroll'>
       <div className='h-full px-4'>
         <div className='flex flex-col lg:flex-row h-full
-        items-center justify-start gap-x-8 text-center
+        items-center justify-between text-center
         lg:text-left'>
           {/* bg */}
           <motion.div 
@@ -159,7 +159,7 @@ const Inquire = () => {
           >
           </motion.div>
           {/* text & form */}
-          <div className='lg:flex-1 pt-[80px]'>
+          <div className='lg:w-1/2 pt-[80px]'>
             <h1 className='h1'>Contact</h1>
             <p className='mb-12'>Put on your french maid outfit</p>
             <form onSubmit={handleSubmit} className='flex flex-col gap-y-4'> 
@@ -324,15 +324,23 @@ const Inquire = () => {
             </form>
           </div>
           {/* image */}
-          <motion.div 
-            initial={{ opacity: 0, y: '100%' }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: '100%' }}
-            transition={{ transition: transition1, duration: 1.5 }}
-            className='lg:flex-1'
-          >
-            <img src={inquireImg} alt='' />
-          </motion.div>
+          <div className="lg:w-1/2 flex justify-end">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0 }}
+              transition={transition1}
+              className="relative lg:-right-10 overflow-hidden"
+            >
+              <motion.img
+                className="size-auto object-contain max-h-[calc(100vh-70px)]"
+                whileHover={{ scale: 1.1 }}
+                transition={transition1}
+                src={inquireImg}
+                alt="Contact"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>

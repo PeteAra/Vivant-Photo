@@ -36,7 +36,7 @@ const Home = () => {
                 <h1 className="h1">
                   Michaela <br /> Vivant
                 </h1>
-                <p className="text-[26px] lg:text-[36px] tracking-widest font-three mb-4 lg:mb-12">
+                <p className="text-[26px] lg:text-[36px] tracking-widest font-two font-bold mb-4 lg:mb-12">
                   Minneapolis, MN
                 </p>
                 <p className="mb-12 max-w-sm font-one font-bold">
