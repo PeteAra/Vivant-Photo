@@ -4,7 +4,7 @@
 
 @layer base {
   body, html {
-    @apply text-primary font-one bg-[#f2e6d5];
+    @apply text-primary font-one bg-[#f1ede7];
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -161,18 +161,17 @@
 }
 
 .subnav {
-  background-color: #B2DFDB ;
+  background-color: #FFB74D ;
   border-radius: 0 0 50% 50%;
-  border-bottom: #FFB74D  8px solid;
+  /* border-bottom: #FFB74D  8px solid; */
 }
 
 .subnav .active {
-  background-color: #f2e6d5;
-  border-radius: 25%;
-  -moz-box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
+
+  /* -moz-box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
   -webkit-box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
-  box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
-  color: #000;
+  box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset; */
+  color: #ffffff;
 }
 
 .subnav a:focus {

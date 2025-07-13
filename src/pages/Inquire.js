@@ -101,8 +101,8 @@ const Inquire = () => {
 
     try {
       const result = await emailjs.send(
-        'service_jghly6s', 
-        'template_57122e2',
+        'service_7e6rhwe', 
+        'template_w48ns3f',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -113,7 +113,7 @@ const Inquire = () => {
           additional_details: formData.additionalDetails,
           to_name: 'Michaela Vivant',
         },
-        'vKZ0qHSJFIo4lqhGy' 
+        '4Xf0Qb7QymThyiTS4' 
       );
 
       setSubmitStatus('success');
@@ -333,7 +333,7 @@ const Inquire = () => {
               className="relative lg:-right-10 overflow-hidden"
             >
               <motion.img
-                className="size-auto object-contain max-h-[calc(100vh-70px)]"
+                className="size-auto object-contain "
                 whileHover={{ scale: 1.1 }}
                 transition={transition1}
                 src={inquireImg}

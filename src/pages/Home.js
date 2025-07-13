@@ -63,7 +63,7 @@ const Home = () => {
                   className="relative lg:-right-40 overflow-hidden"
                 >
                   <motion.img
-                    className="size-auto object-contain max-h-[calc(100vh-70px)]"
+                    className="size-auto object-contain max-h-[calc(100vh-65px)]"
                     whileHover={{ scale: 1.1 }}
                     transition={transition1}
                     src={WomanImg}
