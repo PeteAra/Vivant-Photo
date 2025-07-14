@@ -24,9 +24,9 @@ import p18 from '../img/prices/p18.svg';
 const Pricing = () => {
   return (
   <motion.section 
-  initial={{ scale: 0, y: '100%' }}
-  animate={{ scale: 1, y: 0 }}
-  exit={{ scale: 0, y: '100%' }}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
   transition={transition1}
   className='section'>
     <div className='pt-[70px]'>

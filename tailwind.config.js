@@ -11,7 +11,8 @@ module.exports = {
       six: ['Bagife', 'sans-serif'],
       seven: ['RolieTwily', 'sans-serif'],
       eight: ['Nectarine', 'sans-serif'],
-      nine: ['Last Dream', 'sans-serif']
+      nine: ['Last Dream', 'sans-serif'],
+      ten: ['MOELA', 'sans-serif']
     },
     screens: {
       sm: '640px',

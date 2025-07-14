@@ -40,15 +40,21 @@ const Home = () => {
                   Minneapolis, MN
                 </p>
                 <p className="mb-12 max-w-sm font-one font-bold">
-                  I take pictures for a living, both full time and on the side.
-                  I'm an ultrasound tech full time but I love capturing memories with
-                  a camera too! 
-                  <b> I love Pete, he's so cool! </b>
+                  Hey, I’m Michaela! I’m a traveling ultrasound tech with a deep love for photography
+                  that’s grown into so much more than just a side passion. For the past six years,
+                  I’ve had the joy of capturing portraits, intimate boudoir sessions, and unforgettable
+                  wedding days—and I truly love every second of it. I’m all about real,
+                  unposed moments—the laughs that make your face hurt, the happy tears,
+                  and everything in between. My goal? That it never feels like a photoshoot—just hanging out,
+                  having fun, and somehow ending up with a gallery full of magic. I also LOVE a good vision.
+                  I’m a Pinterest and Tiktok girly through and through, and I’m always up for turning your
+                  wildest ideas into reality. Unique engagement sessions, creative inspo boards, crazy ideas—I’m all in. 
+                  If you're down for belly laughs, spontaneous dance moves, and a photographer with a 
+                  laugh so loud and contagious it usually gets everyone giggling—I'm your girl.
+
+                  <b> Let’s make some memories. Message me and let’s plan something fun!</b>
                   <br />
                   <br />
-                  I've been doing portrait photography for about
-                  3 years now and about a year doing weddings which I have
-                  absolutely loved being a part of!
                 </p>
                 <Link to="/weddings" className="btn">
                   View my work

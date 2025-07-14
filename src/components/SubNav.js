@@ -45,35 +45,35 @@ const SubNav = () => {
           className="text-black hover:text-white transition"
           aria-label="View Families Portfolio"
         >
-          FAMILIES
+          families
         </NavLink>
         <NavLink
           to="/seniors"
           className="text-black hover:text-white transition"
           aria-label="View Seniors Portfolio"
         >
-          SENIORS
+          seniors
         </NavLink>
         <NavLink
           to="/weddings"
           className="text-black hover:text-white transition"
           aria-label="View Weddings Portfolio"
         >
-          WEDDINGS
+          weddings
         </NavLink>
         <NavLink
           to="/engagement"
           className="text-black hover:text-white transition"
           aria-label="View Engagement Portfolio"
         >
-          ENGAGEMENT
+          engagement
         </NavLink>
         <NavLink
           to="/boudoir"
           className="text-black hover:text-white transition"
           aria-label="View Boudoir Portfolio"
         >
-          BOUDOIR
+          boudoir
         </NavLink>
       </div>
 

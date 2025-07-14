@@ -14,30 +14,30 @@ const Header = () => {
         <Link to="/" className="flash w-[100px]">
           <img src={Logo} alt="Michaela Vivant Logo" />
         </Link>
-        <nav className="hidden md:flex gap-x-12 font-one font-bold text-2xl">
+        <nav className="hidden md:flex gap-x-12 font-ten font-bold text-2xl">
           <Link
             to="/"
             className="text-[#696c6d] hover:text-primary transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
-            About
+            ABOUT
           </Link>
           <Link
             to="/weddings"
             className="text-[#696c6d] hover:text-primary transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
-            Portfolio
+            GALLERIES
           </Link>
           <Link
             to="/pricing"
             className="text-[#696c6d] hover:text-primary transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
-            Pricing
+            PRICING
           </Link>
           <Link
             to="/inquire"
             className="text-[#696c6d] hover:text-primary transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
-            Inquire
+            INQUIRE
           </Link>
         </nav>
         <Socials />

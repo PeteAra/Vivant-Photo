@@ -80,8 +80,32 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'MOELA';
+    src: url('../public/fonts/MOELA.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'MOELA';
+    src: url('../public/fonts/MOELA-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'MOELA';
+    src: url('../public/fonts/MOELA-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
   .h1 {
-    @apply text-[54px] font-seven capitalize leading-[120%] tracking-[-0.0005em] mb-2;
+    @apply text-[54px] font-two capitalize leading-[120%] tracking-[-0.0005em] mb-2;
   }
 
   .h2 {
@@ -161,7 +185,7 @@
 }
 
 .subnav {
-  background-color: #FFB74D ;
+  background-color: hsl(36, 100%, 83%) ;
   border-radius: 0 0 50% 50%;
   /* border-bottom: #FFB74D  8px solid; */
 }

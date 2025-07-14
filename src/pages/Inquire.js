@@ -21,6 +21,7 @@ const Inquire = () => {
   const [submitStatus, setSubmitStatus] = useState('');
   const [showCalendar, setShowCalendar] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [missingFieldsError, setMissingFieldsError] = useState(false);
 
   const referralOptions = [
     'Instagram',
@@ -98,6 +99,15 @@ const Inquire = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('');
+    setMissingFieldsError(false);
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.interest || !formData.eventDate) {
+      setSubmitStatus('error');
+      setMissingFieldsError(true);
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const result = await emailjs.send(
@@ -154,14 +164,18 @@ const Inquire = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '100%' }}
             transition={transition1}
-            className='hidden lg:flex bg-[#f1e7bd] 
-            absolute bottom-[-50px] left-0 right-0 top-16 -z-10'
+            className='flex bg-[#eee9ed] 
+            absolute bottom-[-500px] left-0 right-0 top-0 -z-10'
           >
           </motion.div>
+          
+          {/* Centered h1 */}
+          <div className='absolute top-[100px] left-1/2 transform -translate-x-1/2 z-10 text-center'>
+            <h1 className='h1 text-[200px]'>Let's Chat!</h1>
+          </div>
+          
           {/* text & form */}
-          <div className='lg:w-1/2 pt-[80px]'>
-            <h1 className='h1'>Contact</h1>
-            <p className='mb-12'>Put on your french maid outfit</p>
+          <div className='lg:w-1/2 pt-[120px]'>
             <form onSubmit={handleSubmit} className='flex flex-col gap-y-4'> 
               <div className='flex gap-x-10'>
                 <input
@@ -213,7 +227,6 @@ const Inquire = () => {
 
               {/* Event Date */}
               <div className='mb-4'>
-                <p className='font-one font-bold mb-3 text-left'>Event Date</p>
                 <div className='relative calendar-container'>
                   <input
                     className='outline-none border-b
@@ -225,6 +238,7 @@ const Inquire = () => {
                     onClick={() => setShowCalendar(!showCalendar)}
                     placeholder='Select event date'
                     readOnly
+                    required
                   />
                   <FaChevronDown className='absolute right-3 top-1/2 transform -translate-y-1/2 text-[#757879] cursor-pointer pointer-events-none' />
                   {showCalendar && (
@@ -238,11 +252,14 @@ const Inquire = () => {
                     </div>
                   )}
                 </div>
+                {/* Show error if not selected and tried to submit */}
+                {submitStatus === 'error' && !formData.eventDate && (
+                  <p className='text-red-600 font-seven text-base mt-1'>Event date is required.</p>
+                )}
               </div>
 
               {/* Referral Source */}
               <div className='mb-4'>
-                <p className='font-one font-bold mb-3 text-left'>How did you hear about me?</p>
                 <div className='relative dropdown-container'>
                   <input
                     className='outline-none border-b
@@ -252,7 +269,7 @@ const Inquire = () => {
                     type='text'
                     value={formData.referralSource}
                     onClick={() => setShowDropdown(!showDropdown)}
-                    placeholder='Select an option'
+                    placeholder='How did you hear about me?'
                     readOnly
                   />
                   <FaChevronDown className='absolute right-3 top-1/2 transform -translate-y-1/2 text-[#757879] pointer-events-none' />
@@ -274,7 +291,6 @@ const Inquire = () => {
 
               {/* Budget */}
               <div className='mb-4'>
-                <p className='font-one font-bold mb-3 text-left'>Budget</p>
                 <div className='relative'>
                   <span className='absolute left-3 top-1/2 transform -translate-y-1/2 font-one font-bold text-[#757879]'>$</span>
                   <input
@@ -305,22 +321,26 @@ const Inquire = () => {
                   rows={4}
                 />
               </div>
-
-              <button 
-                type='submit'
-                disabled={isSubmitting}
-                className='btn mb-[30px] mx-auto
-                lg:mx-0 self-start disabled:opacity-50 disabled:cursor-not-allowed'
-              >
-                {isSubmitting ? 'Sending...' : 'Send it'}
-              </button>
-              
-              {submitStatus === 'success' && (
-                <p className='text-green-600 font-seven'>Message sent successfully!</p>
-              )}
-              {submitStatus === 'error' && (
-                <p className='text-red-600 font-seven'>Failed to send message. Please try again.</p>
-              )}
+              <div className="flex flex-row items-center gap-x-6">
+                <button 
+                  type='submit'
+                  disabled={isSubmitting}
+                  className='btn mb-[30px] mx-auto
+                  lg:mx-0 self-start disabled:opacity-50 disabled:cursor-not-allowed'
+                >
+                  {isSubmitting ? 'Sending...' : 'Send it'}
+                </button>
+                
+                {submitStatus === 'success' && (
+                  <p className='text-green-600 font-three text-3xl'>Message sent successfully!</p>
+                )}
+                {submitStatus === 'error' && missingFieldsError && (
+                  <p className='text-red-600 font-three text-2xl'>Please fill out all required fields before submitting.</p>
+                )}
+                {submitStatus === 'error' && !missingFieldsError && (
+                  <p className='text-red-600 font-seven text-3xl'>Failed to send message. Please try again.</p>
+                )}
+              </div>
             </form>
           </div>
           {/* image */}
@@ -330,7 +350,7 @@ const Inquire = () => {
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
               transition={transition1}
-              className="relative lg:-right-10 overflow-hidden"
+              className="relative lg:-right-10 overflow-hidden rounded-[290px]"
             >
               <motion.img
                 className="size-auto object-contain "
