@@ -32,7 +32,7 @@ const SubNav = () => {
 
   return (
     <motion.nav
-      className="z-10 w-full px-4 sm:px-20 font-one flex flex-row items-center justify-center gap-x-4 sm:gap-x-8 font-semibold py-2 fixed top-[70px] subnav"
+      className="z-10 w-full px-4 sm:px-20 font-one flex flex-row items-center justify-center gap-x-4 sm:gap-x-8 py-2 fixed top-[70px] subnav"
       initial={{ opacity: 0, y: -40 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -100 }}
@@ -42,35 +42,35 @@ const SubNav = () => {
       <div className="hidden sm:flex flex-row items-center justify-center gap-x-4 sm:gap-x-8">
         <NavLink
           to="/families"
-          className="text-black hover:text-white transition"
+          className="text-black hover:text-[#912a2d] transition"
           aria-label="View Families Portfolio"
         >
           families
         </NavLink>
         <NavLink
           to="/seniors"
-          className="text-black hover:text-white transition"
+          className="text-black hover:text-[#912a2d] transition"
           aria-label="View Seniors Portfolio"
         >
           seniors
         </NavLink>
         <NavLink
           to="/weddings"
-          className="text-black hover:text-white transition"
+          className="text-black hover:text-[#912a2d] transition"
           aria-label="View Weddings Portfolio"
         >
           weddings
         </NavLink>
         <NavLink
           to="/engagement"
-          className="text-black hover:text-white transition"
+          className="text-black hover:text-[#912a2d] transition"
           aria-label="View Engagement Portfolio"
         >
           engagement
         </NavLink>
         <NavLink
           to="/boudoir"
-          className="text-black hover:text-white transition"
+          className="text-black hover:text-[#912a2d] transition"
           aria-label="View Boudoir Portfolio"
         >
           boudoir

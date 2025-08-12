@@ -119,6 +119,7 @@
   }
 
   .innerCon {
+    @apply w-full;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -160,8 +161,8 @@
   .iframe-container {
     @apply w-full;
     position: absolute;
-    top: 95px;
-    height: calc(100vh - 95px);
+    top: 90px;
+    height: calc(100vh - 90px);
   }
 
   .iframe-container iframe {
@@ -178,15 +179,16 @@
 }
 
 .header-css {
-  background-color: #fff;
-  -moz-box-shadow: 0px 0px 15px 0px #fff;
-  -webkit-box-shadow: 0px 0px 15px 0px #fff;
-  box-shadow: 0px 0px 15px 0px #fff;
+  background-color: #ffffff;
+  -moz-box-shadow: 0px 0px 5px 0px #fff;
+  -webkit-box-shadow: 0px 0px 5px 0px #ffffff;
+  box-shadow: 0px 0px 5px 0px #fff;
 }
 
 .subnav {
   background-color: hsl(36, 100%, 83%) ;
   border-radius: 0 0 50% 50%;
+  font-weight: bold;
   /* border-bottom: #FFB74D  8px solid; */
 }
 
@@ -195,7 +197,7 @@
   /* -moz-box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
   -webkit-box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset;
   box-shadow: 0px 0px 8px 5px #fff, 0px 0px 8px 5px #fff inset; */
-  color: #ffffff;
+  color: #912a2d;
 }
 
 .subnav a:focus {
