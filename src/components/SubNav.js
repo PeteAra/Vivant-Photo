@@ -88,7 +88,7 @@ const SubNav = () => {
         </div>
         
         {showDropdown && (
-          <div className="absolute top-full left-0 right-0 z-10 mt-1 bg-[#B2DFDB] border border-gray-300 rounded-lg shadow-lg">
+          <div className="absolute top-full left-0 right-0 z-10 mt-1 bg-[#fff] border border-gray-300 rounded-lg shadow-lg">
             {galleryOptions.map((option) => (
               <NavLink
                 key={option.path}

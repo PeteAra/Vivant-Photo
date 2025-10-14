@@ -15,6 +15,7 @@ module.exports = {
       ten: ['MOELA', 'sans-serif']
     },
     screens: {
+      xs: '431px',
       sm: '640px',
       md: '768px',
       lg: '1024px',

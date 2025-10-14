@@ -150,7 +150,7 @@ const Inquire = () => {
         <div className='h-full px-4'>
           <div className='flex flex-col lg:flex-row h-full
           items-center justify-between text-center
-          lg:text-left'>
+          lg:text-left lg:gap-x-8'>
             {/* bg */}
             <motion.div 
               initial={{ opacity: 0, y: '100%' }}
@@ -162,13 +162,13 @@ const Inquire = () => {
             >
             </motion.div>
             
-            {/* Centered h1 */}
-            <div className='absolute top-[100px] left-1/2 transform -translate-x-1/2 z-10 text-center'>
-              <h1 className='h1 text-[200px]'>Let's Chat!</h1>
+            {/* h1 for small screens only */}
+            <div className='lg:hidden w-full text-center pt-8 pb-4'>
+              <h1 className='h1 text-[80px]'>Let's Chat!</h1>
             </div>
             
             {/* text & form */}
-            <div className='lg:w-1/2 pt-[120px]'>
+            <div className='w-full lg:w-1/2 pt-[20px] lg:pt-[20px]'>
               <form onSubmit={handleSubmit} className='flex flex-col gap-y-4'> 
                 <div className='flex gap-x-10'>
                   <input
@@ -267,7 +267,7 @@ const Inquire = () => {
                     />
                     <FaChevronDown className='absolute right-3 top-1/2 transform -translate-y-1/2 text-[#757879] pointer-events-none' />
                     {showDropdown && (
-                      <div className='absolute top-full left-0 right-0 z-10 mt-1 bg-[#B2DFDB] border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto'>
+                      <div className='absolute top-full left-0 right-0 z-10 mt-1 bg-[#fff] border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-y-auto'>
                         {referralOptions.map((option) => (
                           <div
                             key={option}
@@ -336,17 +336,22 @@ const Inquire = () => {
                 </div>
               </form>
             </div>
-            {/* image */}
-            <div className="lg:w-1/2 flex justify-end">
+            
+            {/* h1 and Image column - hidden on small screens */}
+            <div className='hidden lg:flex lg:w-1/2 flex-col items-center justify-start pt-[20px]'>
+              {/* h1 */}
+              <h1 className='h1 text-[160px] relative z-20 mb-[-90px] text-center w-full -mt-5'>Let's Chat!</h1>
+              
+              {/* image */}
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
                 transition={transition1}
-                className="relative lg:-right-10 overflow-hidden rounded-[290px]"
+                className="relative overflow-hidden rounded-[290px] z-10"
               >
                 <motion.img
-                  className="size-auto object-contain "
+                  className="size-auto object-contain"
                   whileHover={{ scale: 1.1 }}
                   transition={transition1}
                   src={inquireImg}
