@@ -46,6 +46,8 @@ const Home = () => {
                  src={Micki} 
                  alt='Michaela Vivant' 
                  className='w-full h-full object-cover'
+                 loading="eager"
+                 decoding="async"
                />
              </motion.div>
               <div className="bg-white bg-opacity-70 p-4 mb-12 inline-block rounded-md w-[90vw] lg:w-[60vw] -mt-96 lg:-mt-[40em] relative z-10 backdrop-blur-sm">

@@ -356,6 +356,8 @@ const Inquire = () => {
                   transition={transition1}
                   src={inquireImg}
                   alt="Contact"
+                  loading="lazy"
+                  decoding="async"
                 />
               </motion.div>
             </div>
