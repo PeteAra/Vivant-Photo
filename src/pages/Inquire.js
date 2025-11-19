@@ -157,7 +157,7 @@ const Inquire = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: '100%' }}
               transition={transition1}
-              className='flex bg-[#eee9ed] 
+              className='flex bg-[#f1ede7] 
               absolute bottom-[-500px] left-0 right-0 top-0 -z-10'
             >
             </motion.div>
