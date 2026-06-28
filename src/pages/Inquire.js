@@ -102,7 +102,7 @@ const Inquire = () => {
     }
 
     try {
-      const result = await emailjs.send(
+      await emailjs.send(
         'service_7e6rhwe', 
         'template_w48ns3f',
         {
