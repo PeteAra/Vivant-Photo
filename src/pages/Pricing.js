@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
 import p1 from '../img/prices/p1.svg';
@@ -22,6 +22,7 @@ import p18 from '../img/prices/p18.svg';
 
 
 const Pricing = () => {
+  const scrollRef = useRef(null);
   const [visibleImages, setVisibleImages] = useState(3); // Start with first 3 images
   const [isLoading, setIsLoading] = useState(true);
 
@@ -61,17 +62,20 @@ const Pricing = () => {
   }, [visibleImages, images.length]);
 
   useEffect(() => {
-    // Load more images on scroll
+    const scrollEl = scrollRef.current;
+    if (!scrollEl) return;
+
     const handleScroll = () => {
-      if (window.innerHeight + document.documentElement.scrollTop >= 
-          document.documentElement.offsetHeight - 1000 && 
-          visibleImages < images.length) {
+      if (
+        scrollEl.scrollTop + scrollEl.clientHeight >= scrollEl.scrollHeight - 1000 &&
+        visibleImages < images.length
+      ) {
         setVisibleImages(prev => Math.min(prev + 2, images.length));
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    scrollEl.addEventListener('scroll', handleScroll);
+    return () => scrollEl.removeEventListener('scroll', handleScroll);
   }, [visibleImages, images.length]);
 
   return (
@@ -82,8 +86,7 @@ const Pricing = () => {
       transition={transition1}
       className='section'
     >
-      <div className='pt-[70px]'>
-        <div className='innerCon'>
+      <div className='innerCon' ref={scrollRef}>
           {images.slice(0, visibleImages).map((image, index) => (
             <motion.img
               key={index}
@@ -103,7 +106,6 @@ const Pricing = () => {
               <span className="ml-2 font-one">Loading more pricing packages...</span>
             </div>
           )}
-        </div>
       </div>
     </motion.section>
   );

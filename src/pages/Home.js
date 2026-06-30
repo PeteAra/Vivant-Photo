@@ -36,14 +36,14 @@ const Home = () => {
               Vivant
             </h1>
           </div>
-          <p className="home-hero-photography text-[4vw] lg:text-[36px] sm:text-[3.5vw] xs:text-[4vw] font-one lg:font-normal">
+          <p className="home-hero-photography font-one lg:font-normal">
             P&nbsp;H&nbsp;O&nbsp;T&nbsp;O&nbsp;G&nbsp;R&nbsp;A&nbsp;P&nbsp;H&nbsp;Y
           </p>
         </motion.div>
         </div>
       </div>
 
-    <div className='relative z-10 pt-[70px]'>
+    <div className='home-scroll'>
     <motion.section
       initial={{ opacity: 0, y: '100%' }}
       animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ const Home = () => {
       transition={transition1}
       className="section relative min-h-screen"
     >
-        <div className="innerCon relative">
+        <div className="relative w-full">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
