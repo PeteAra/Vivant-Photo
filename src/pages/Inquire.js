@@ -145,8 +145,7 @@ const Inquire = () => {
     transition={transition1}
     className='section bg-white'
   >
-    <div className='pt-[70px]'>
-      <div className='innerCon'>
+    <div className='innerCon'>
         <div className='h-full px-4'>
           <div className='flex flex-col lg:flex-row h-full
           items-center justify-between text-center
@@ -364,7 +363,6 @@ const Inquire = () => {
           </div>
         </div>
       </div>
-    </div>
   </motion.section>
   );
 };

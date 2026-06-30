@@ -32,7 +32,7 @@ const MobileNav = () => {
 
       <div 
         onClick={() => setOpenMenu(true)}
-        className='text-4xl cursor-pointer absolute z-10 right-5 top-[17px]'
+        className='text-4xl cursor-pointer shrink-0 leading-none'
         style={{ color: '#FFB74D' }}
       >
         <TiThMenu />
