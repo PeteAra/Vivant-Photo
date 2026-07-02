@@ -1,76 +1,71 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { IoMdClose } from 'react-icons/io';
-import { TiThMenu } from "react-icons/ti";
+import { TiThMenu } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useSwipeable } from 'react-swipeable';
-
-const menuVariants = {
-  hidden: {
-    x: '100%'
-  },
-  show: {
-    x: 0,
-    transition: {
-      ease: [0.6, 0.01, -0.05, 0.9],
-    },
-  },
-};
 
 const MobileNav = () => {
-
   const [openMenu, setOpenMenu] = useState(false);
 
-  const handlers = useSwipeable({
-    onSwipedRight: () => setOpenMenu(false),
-    delta: 50,
-    preventDefaultTouchmoveEvent: true,
-  });
+  const closeMenu = () => setOpenMenu(false);
 
   return (
-    <nav className='text-primary md:hidden'>
-
-      <div 
+    <nav className="text-primary md:hidden">
+      <div
         onClick={() => setOpenMenu(true)}
-        className='text-4xl cursor-pointer shrink-0 leading-none'
+        className="text-4xl cursor-pointer shrink-0 leading-none"
         style={{ color: '#FFB74D' }}
+        aria-label="Open menu"
+        role="button"
       >
         <TiThMenu />
       </div>
 
-      <motion.div 
-        variants={menuVariants} 
-        initial='hidden'
-        animate={openMenu ? 'show' : ''}
-        className='bg-orange-100 shadow-2xl w-full absolute
-        top-0 right-0 max-w-xs h-screen z-20'
-        {...handlers}>
+      {openMenu &&
+        createPortal(
+          <>
+            <button
+              type="button"
+              className="fixed inset-0 z-40 bg-black/20 md:hidden"
+              onClick={closeMenu}
+              aria-label="Close menu"
+            />
+            <div className="fixed top-0 right-0 z-50 h-screen w-full max-w-xs bg-orange-100 shadow-2xl md:hidden">
+              <button
+                type="button"
+                onClick={closeMenu}
+                className="absolute left-4 top-5 z-30 text-4xl text-primary cursor-pointer"
+                aria-label="Close menu"
+              >
+                <IoMdClose />
+              </button>
 
-        <div 
-          onClick={() => setOpenMenu(false)}
-          className='text-4xl absolute z-30 left-4 top-5
-          text-primary cursor-pointer'>
-          <IoMdClose />
-        </div>
-
-        <ul className='h-full flex flex-col justify-start pt-32
-        items-center gap-y-14 text-primary font-one 
-        font-bold text-4xl'>
-          <li>
-            <Link to='/' onClick={() => setOpenMenu(false)}>About</Link>
-          </li>
-          <li>
-            <Link to='/weddings' onClick={() => setOpenMenu(false)}>Portfolio</Link>
-          </li>
-          <li>
-            <Link to='/pricing' onClick={() => setOpenMenu(false)}>Pricing</Link>
-          </li>
-          <li>
-            <Link to='/inquire' onClick={() => setOpenMenu(false)}>Inquire</Link>
-          </li>
-        </ul>
-
-      </motion.div>
+              <ul className="flex h-full flex-col items-center justify-start gap-y-14 pt-32 font-one text-4xl font-bold text-primary">
+                <li>
+                  <Link to="/" onClick={closeMenu}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/weddings" onClick={closeMenu}>
+                    Portfolio
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/pricing" onClick={closeMenu}>
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/inquire" onClick={closeMenu}>
+                    Inquire
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </>,
+          document.body
+        )}
     </nav>
   );
 };

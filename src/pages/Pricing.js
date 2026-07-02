@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
+import PageMeta from '../components/PageMeta';
+import Footer from '../components/Footer';
+import { PAGE_META } from '../seo/pageMeta';
 import p1 from '../img/prices/p1.svg';
 import p2 from '../img/prices/p2.svg';
 import p3 from '../img/prices/p3.svg';
@@ -27,22 +30,22 @@ const Pricing = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const images = [
-    { src: p1, alt: "Pricing Package 1" },
-    { src: p2, alt: "Pricing Package 2" },
-    { src: p3, alt: "Pricing Package 3" },
-    { src: p4, alt: "Pricing Package 4" },
-    { src: p5, alt: "Pricing Package 5" },
-    { src: p6, alt: "Pricing Package 6" },
-    { src: p7, alt: "Pricing Package 7" },
-    { src: p8, alt: "Pricing Package 8" },
-    { src: p9, alt: "Pricing Package 9" },
-    { src: p10, alt: "Pricing Package 10" },
-    { src: p12, alt: "Pricing Package 12" },
-    { src: p13, alt: "Pricing Package 13" },
-    { src: p15, alt: "Pricing Package 15" },
-    { src: p16, alt: "Pricing Package 16" },
-    { src: p17, alt: "Pricing Package 17" },
-    { src: p18, alt: "Pricing Package 18" }
+    { src: p1 },
+    { src: p2 },
+    { src: p3 },
+    { src: p4 },
+    { src: p5 },
+    { src: p6 },
+    { src: p7 },
+    { src: p8 },
+    { src: p9 },
+    { src: p10 },
+    { src: p12 },
+    { src: p13 },
+    { src: p15 },
+    { src: p16 },
+    { src: p17 },
+    { src: p18 },
   ];
 
   useEffect(() => {
@@ -86,12 +89,13 @@ const Pricing = () => {
       transition={transition1}
       className='section'
     >
+      <PageMeta {...PAGE_META.pricing} />
       <div className='innerCon' ref={scrollRef}>
           {images.slice(0, visibleImages).map((image, index) => (
             <motion.img
               key={index}
               src={image.src}
-              alt={image.alt}
+              alt={`Michaela Vivant Photography pricing guide, page ${index + 1} of ${images.length}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -106,6 +110,7 @@ const Pricing = () => {
               <span className="ml-2 font-one">Loading more pricing packages...</span>
             </div>
           )}
+          <Footer />
       </div>
     </motion.section>
   );

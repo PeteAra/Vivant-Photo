@@ -1,8 +1,6 @@
-import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-import { transition2 } from '../transitions';
 import { useState, useEffect } from 'react';
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown } from 'react-icons/fa';
 
 const SubNav = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -12,10 +10,9 @@ const SubNav = () => {
     { path: '/seniors', label: 'SENIORS' },
     { path: '/weddings', label: 'WEDDINGS' },
     { path: '/engagement', label: 'ENGAGEMENT' },
-    { path: '/boudoir', label: 'BOUDOIR' }
+    { path: '/boudoir', label: 'BOUDOIR' },
   ];
 
-  // Handle click outside to close dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (showDropdown && !event.target.closest('.dropdown-container')) {
@@ -24,77 +21,69 @@ const SubNav = () => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [showDropdown]);
 
   return (
-    <motion.nav
-      className="z-10 w-full px-4 sm:px-20 font-one flex flex-row items-center justify-center gap-x-4 sm:gap-x-8 py-1 fixed top-[70px] subnav"
-      initial={{ opacity: 0, y: -40 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -100 }}
-      transition={transition2}
-    >
-      {/* Desktop Navigation */}
-      <div className="hidden sm:flex flex-row items-center justify-center gap-x-4 sm:gap-x-8">
+    <nav className="subnav fixed top-[70px] z-10 flex w-full flex-row items-center justify-center gap-x-4 px-4 py-1 font-one sm:gap-x-8 sm:px-20">
+      <div className="hidden flex-row items-center justify-center gap-x-4 sm:flex sm:gap-x-8">
         <NavLink
           to="/families"
-          className="text-black hover:text-[#912a2d] transition"
+          className="text-black transition hover:text-[#912a2d]"
           aria-label="View Families Portfolio"
         >
           families
         </NavLink>
         <NavLink
           to="/seniors"
-          className="text-black hover:text-[#912a2d] transition"
+          className="text-black transition hover:text-[#912a2d]"
           aria-label="View Seniors Portfolio"
         >
           seniors
         </NavLink>
         <NavLink
           to="/weddings"
-          className="text-black hover:text-[#912a2d] transition"
+          className="text-black transition hover:text-[#912a2d]"
           aria-label="View Weddings Portfolio"
         >
           weddings
         </NavLink>
         <NavLink
           to="/engagement"
-          className="text-black hover:text-[#912a2d] transition"
+          className="text-black transition hover:text-[#912a2d]"
           aria-label="View Engagement Portfolio"
         >
           engagement
         </NavLink>
         <NavLink
           to="/boudoir"
-          className="text-black hover:text-[#912a2d] transition"
+          className="text-black transition hover:text-[#912a2d]"
           aria-label="View Boudoir Portfolio"
         >
           boudoir
         </NavLink>
       </div>
 
-      {/* Mobile Dropdown */}
-      <div className="sm:hidden dropdown-container">
+      <div className="dropdown-container sm:hidden">
         <div
-          className="flex items-center gap-x-2 cursor-pointer"
+          className="flex cursor-pointer items-center gap-x-2"
           onClick={() => setShowDropdown(!showDropdown)}
         >
-          <span className="text-black font-semibold">Galleries</span>
+          <span className="font-semibold text-black">Galleries</span>
           <FaChevronDown className="text-black" />
         </div>
-        
+
         {showDropdown && (
-          <div className="absolute top-full left-0 right-0 z-10 mt-1 bg-[#fff] border border-gray-300 rounded-lg shadow-lg">
+          <div className="absolute left-0 right-0 top-full z-10 mt-1 rounded-lg border border-gray-300 bg-[#fff] shadow-lg">
             {galleryOptions.map((option) => (
               <NavLink
                 key={option.path}
                 to={option.path}
-                className={({ isActive }) => 
-                  `block px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                className={({ isActive }) =>
+                  `block cursor-pointer px-3 py-2 transition-colors duration-200 ${
                     isActive ? 'bg-[#FFB74D]' : 'hover:bg-[#FFB74D]'
                   }`
                 }
@@ -106,7 +95,7 @@ const SubNav = () => {
           </div>
         )}
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
