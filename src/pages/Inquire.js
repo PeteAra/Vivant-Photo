@@ -6,6 +6,9 @@ import emailjs from '@emailjs/browser';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { FaChevronDown } from "react-icons/fa";
+import PageMeta from '../components/PageMeta';
+import Footer from '../components/Footer';
+import { PAGE_META } from '../seo/pageMeta';
 
 const Inquire = () => {
   const [formData, setFormData] = useState({
@@ -145,6 +148,7 @@ const Inquire = () => {
     transition={transition1}
     className='section bg-white'
   >
+    <PageMeta {...PAGE_META.inquire} />
     <div className='innerCon'>
         <div className='h-full px-4'>
           <div className='flex flex-col lg:flex-row h-full
@@ -362,6 +366,7 @@ const Inquire = () => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
   </motion.section>
   );
