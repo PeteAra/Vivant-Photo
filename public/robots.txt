@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://vivant-photo.vercel.app/sitemap.xml
+Sitemap: https://michaelavivant.com/sitemap.xml
