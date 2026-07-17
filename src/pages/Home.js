@@ -8,6 +8,7 @@ import StructuredData from '../components/StructuredData';
 import { PAGE_META } from '../seo/pageMeta';
 import { homeStructuredData } from '../seo/structuredData';
 import Footer from '../components/Footer';
+import ChatReveal from '../components/ChatReveal';
 
 const bioLinkClass =
   'text-[#912a2d] underline-offset-2 hover:underline transition-colors';
@@ -40,138 +41,168 @@ const Home = () => {
     <>
       <PageMeta {...PAGE_META.home} />
       <StructuredData data={homeStructuredData} />
-      <div className="home-hero-frame">
-        <div className="home-hero-image-wrap">
+
+      <div className="bleed-hero-media bleed-hero-media--fixed" aria-hidden="true">
         <motion.img
-          initial={{ scale: 1.1 }}
+          initial={{ scale: 1.06 }}
           animate={{ scale: 1 }}
-          exit={{ scale: 1.1 }}
           transition={transition1}
           src={Micki}
-          alt="Michaela Vivant, portrait and wedding photographer"
-          className="w-full h-full object-cover object-top"
+          alt=""
+          className="bleed-hero-image"
           loading="eager"
           decoding="async"
         />
-        <motion.div
-          initial={{ scale: 0, y: '-80%' }}
-          animate={{ scale: 1, y: 0 }}
-          exit={{ scale: 0, y: '-80%' }}
-          transition={transition1}
-          className="absolute inset-0 flex flex-col items-center pt-8"
-        >
-          <h1 className="home-hero-titles flex flex-row w-[80vw] justify-center items-center [&_.h1]:mb-0">
-            <span className="h1 text-[20vw] xs:text-[20vw] sm:text-[16vw]">
-              Michaela
-            </span>
-            <span className="h1 text-[20vw] xs:text-[20vw] sm:text-[16vw]">
-              Vivant
-            </span>
-          </h1>
-          <p className="home-hero-photography font-one lg:font-normal">
-            P&nbsp;H&nbsp;O&nbsp;T&nbsp;O&nbsp;G&nbsp;R&nbsp;A&nbsp;P&nbsp;H&nbsp;Y
-          </p>
-        </motion.div>
-        </div>
+        <div className="bleed-hero-overlay" />
       </div>
 
-    <div className='home-scroll'>
-    <motion.section
-      initial={{ opacity: 0, y: '100%' }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: '100%' }}
-      transition={transition1}
-      className="section relative min-h-screen"
-    >
-        <div className="relative w-full">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={transition1}
-            className="pb-14 flex flex-col justify-start items-center"
+      <div className="home-scroll home-scroll--bleed">
+        <section className="bleed-hero" aria-label="Introduction">
+          <div className="bleed-hero-content">
+            <h1 className="bleed-hero-name">Michaela Vivant</h1>
+            <p className="bleed-hero-label">Photography</p>
+            <p className="bleed-hero-tagline">
+              Real laughs, happy tears, and unposed moments worth keeping.
+            </p>
+          </div>
+
+          <a
+            href="#about"
+            className="bleed-hero-scroll"
+            aria-label="Scroll to about"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById('about')
+                ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
           >
-            <div className="home-hero-scroll-content flex flex-col items-center px-4 pointer-events-auto">
-              <div className="bg-white bg-opacity-70 p-4 rounded-md w-[90vw] lg:w-[60vw] backdrop-blur-sm mb-8">
-                <p className="font-one font-bold text-center leading-loose tracking-wider block sm:hidden">
-                  Hey, I'm Michaela! For the past six years,
-                  I've loved capturing{' '}
-                  <Link to="/families" className={bioLinkClass}>portraits</Link>,{' '}
-                  <Link to="/boudoir" className={bioLinkClass}>boudoir sessions</Link>,
-                  and{' '}
-                  <Link to="/weddings" className={bioLinkClass}>wedding days</Link>{' '}
-                  filled with real, unposed moments—the laughs,
-                  the tears, and everything in between. My goal is to make it feel
-                  effortless, like hanging out and having fun while creating
-                  a gallery full of magic. I'm a Pinterest and TikTok girly
-                  who's always up for bringing your creative ideas
-                  to life—unique sessions, wild concepts, and plenty
-                  of laughter included.
-                  <br />
-                  <br />
-                  <b>
-                    Let's make some memories.{' '}
-                    <Link to="/inquire" className={bioLinkClass}>Message me</Link>{' '}
-                    and let's plan something fun!
-                  </b>
-                </p>
+            <span>Scroll</span>
+            <span className="bleed-hero-scroll-chevron" aria-hidden="true">
+              ↓
+            </span>
+          </a>
+        </section>
 
-                <p className="font-one font-bold text-center leading-loose tracking-wider hidden sm:block">
-                  Hey, I'm Michaela! For the past six years,
-                  I've had the joy of capturing{' '}
-                  <Link to="/families" className={bioLinkClass}>portraits</Link>, intimate{' '}
-                  <Link to="/boudoir" className={bioLinkClass}>boudoir sessions</Link>, and unforgettable{' '}
-                  <Link to="/weddings" className={bioLinkClass}>wedding days</Link>
-                  —and I truly love every second of it. I'm all about real,
-                  unposed moments—the laughs that make your face hurt, the happy tears,
-                  and everything in between. My goal? That it never feels like a photoshoot—just hanging out,
-                  having fun, and somehow ending up with a gallery full of magic. I also LOVE a good vision.
-                  I'm a Pinterest and Tiktok girly through and through, and I'm always up for turning your
-                  wildest ideas into reality. Unique{' '}
-                  <Link to="/engagement" className={bioLinkClass}>engagement sessions</Link>, creative inspo boards, crazy ideas—I'm all in.
-                  If you're down for belly laughs, spontaneous dance moves, and a photographer with a
-                  laugh so loud and contagious it usually gets everyone giggling—I'm your girl.
-                  <br />
-                  <br />
-                  <b>
-                    Let's make some memories. Check out my{' '}
-                    <Link to="/pricing" className={bioLinkClass}>pricing</Link>, then{' '}
-                    <Link to="/inquire" className={bioLinkClass}>message me</Link>{' '}
-                    and let's plan something fun!
-                  </b>
-                </p>
-              </div>
-              <Link to="/weddings" className="btn mb-8 pointer-events-auto">
-                View my work
-              </Link>
-              <div className="mb-8 relative z-10 pointer-events-auto">
-                <iframe
-                  src="https://www.instagram.com/michaelavivantphoto/embed"
-                  width="540"
-                  height="600"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowTransparency={true}
-                  title="Michaela Vivant Instagram Profile"
-                  style={{
-                    background: '#FFF',
-                    border: '0',
-                    borderRadius: '3px',
-                    boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
-                    margin: '1px',
-                    maxWidth: '80vw',
-                    minWidth: '326px',
-                    width: '80vw'
-                  }}
-                />
-              </div>
-              <Footer />
+        <motion.section
+          id="about"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={transition1}
+          className="section relative z-10"
+        >
+          <div className="home-about-panel flex flex-col items-center px-4 pt-16 pb-12">
+            <div className="home-about-copy w-[90vw] lg:w-[60vw]">
+              <p className="font-one font-bold text-center leading-loose tracking-wider block sm:hidden">
+                Hey, I'm Michaela! For the past six years, I've loved capturing{' '}
+                <Link to="/families" className={bioLinkClass}>
+                  portraits
+                </Link>
+                ,{' '}
+                <Link to="/boudoir" className={bioLinkClass}>
+                  boudoir sessions
+                </Link>
+                , and{' '}
+                <Link to="/weddings" className={bioLinkClass}>
+                  wedding days
+                </Link>{' '}
+                filled with real, unposed moments—the laughs, the tears, and
+                everything in between. My goal is to make it feel effortless,
+                like hanging out and having fun while creating a gallery full of
+                magic. I'm a Pinterest and TikTok girly who's always up for
+                bringing your creative ideas to life—unique sessions, wild
+                concepts, and plenty of laughter included.
+                <br />
+                <br />
+                <b>
+                  Let's make some memories.{' '}
+                  <Link to="/inquire" className={bioLinkClass}>
+                    Message me
+                  </Link>{' '}
+                  and let's plan something fun!
+                </b>
+              </p>
+
+              <p className="font-one font-bold text-center leading-loose tracking-wider hidden sm:block">
+                Hey, I'm Michaela! For the past six years, I've had the joy of
+                capturing{' '}
+                <Link to="/families" className={bioLinkClass}>
+                  portraits
+                </Link>
+                , intimate{' '}
+                <Link to="/boudoir" className={bioLinkClass}>
+                  boudoir sessions
+                </Link>
+                , and unforgettable{' '}
+                <Link to="/weddings" className={bioLinkClass}>
+                  wedding days
+                </Link>
+                —and I truly love every second of it. I'm all about real,
+                unposed moments—the laughs that make your face hurt, the happy
+                tears, and everything in between. My goal? That it never feels
+                like a photoshoot—just hanging out, having fun, and somehow
+                ending up with a gallery full of magic. I also LOVE a good
+                vision. I'm a Pinterest and Tiktok girly through and through, and
+                I'm always up for turning your wildest ideas into reality.
+                Unique{' '}
+                <Link to="/engagement" className={bioLinkClass}>
+                  engagement sessions
+                </Link>
+                , creative inspo boards, crazy ideas—I'm all in. If you're down
+                for belly laughs, spontaneous dance moves, and a photographer
+                with a laugh so loud and contagious it usually gets everyone
+                giggling—I'm your girl.
+                <br />
+                <br />
+                <b>
+                  Let's make some memories. Check out my{' '}
+                  <Link to="/pricing" className={bioLinkClass}>
+                    pricing
+                  </Link>
+                  , then{' '}
+                  <Link to="/inquire" className={bioLinkClass}>
+                    message me
+                  </Link>{' '}
+                  and let's plan something fun!
+                </b>
+              </p>
             </div>
-          </motion.div>
-        </div>
+          </div>
 
-    </motion.section>
-    </div>
+          <ChatReveal />
+
+          <div className="home-about-panel flex flex-col items-center px-4 pt-12 pb-14">
+            <Link to="/weddings" className="btn mb-8">
+              View my work
+            </Link>
+
+            <div className="mb-8 relative z-10">
+              <iframe
+                src="https://www.instagram.com/michaelavivantphoto/embed"
+                width="540"
+                height="600"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency={true}
+                title="Michaela Vivant Instagram Profile"
+                style={{
+                  background: '#FFF',
+                  border: '0',
+                  borderRadius: '3px',
+                  boxShadow:
+                    '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
+                  margin: '1px',
+                  maxWidth: '80vw',
+                  minWidth: '326px',
+                  width: '80vw',
+                }}
+              />
+            </div>
+            <Footer />
+          </div>
+        </motion.section>
+      </div>
     </>
   );
 };
