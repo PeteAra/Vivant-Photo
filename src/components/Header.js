@@ -3,6 +3,7 @@ import Socials from './Socials';
 import Logo from '../img/header/Logo.png';
 import MobileNav from './MobileNav';
 import { Link, useLocation } from 'react-router-dom';
+import { handleGalleriesNavClick } from '../utils/scrollToGalleries';
 
 const Header = () => {
   const location = useLocation();
@@ -87,7 +88,11 @@ const Header = () => {
         <Link to="/" className={linkClass}>
           ABOUT
         </Link>
-        <Link to="/weddings" className={linkClass}>
+        <Link
+          to="/#galleries"
+          className={linkClass}
+          onClick={(event) => handleGalleriesNavClick(event, location.pathname)}
+        >
           GALLERIES
         </Link>
         <Link to="/pricing" className={linkClass}>

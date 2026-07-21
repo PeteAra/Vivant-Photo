@@ -13,6 +13,9 @@ const Footer = () => {
         <Link to="/" className={footerLinkClass}>
           About
         </Link>
+        <Link to="/#galleries" className={footerLinkClass}>
+          Galleries
+        </Link>
         <Link to="/pricing" className={footerLinkClass}>
           Pricing
         </Link>

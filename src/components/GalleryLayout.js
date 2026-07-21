@@ -1,4 +1,4 @@
-import SubNav from './SubNav';
+import { Link } from 'react-router-dom';
 import PageMeta from './PageMeta';
 import useGalleryRoute from '../hooks/useGalleryRoute';
 import { PAGE_META } from '../seo/pageMeta';
@@ -9,7 +9,11 @@ const GalleryLayout = ({ pageKey, iframeTitle, iframeSrc, iframeAriaLabel }) => 
   return (
     <section className="section">
       <PageMeta {...PAGE_META[pageKey]} />
-      <SubNav key="subnav" />
+      <div className="gallery-back">
+        <Link to="/#galleries" className="gallery-back-link">
+          ← All galleries
+        </Link>
+      </div>
       <div className="iframe-container">
         <iframe
           title={iframeTitle}

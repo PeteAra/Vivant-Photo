@@ -2,7 +2,7 @@
 
 A responsive photography portfolio website built for a freelance client. The site showcases the photographer's work, services, and pricing, and allows potential clients to reach out directly via a contact form.
 
-🔗 **Live Site:** [vivant-photo.vercel.app](https://vivant-photo.vercel.app)
+🔗 **Live Site:** [michaelavivant.com](https://michaelavivant.com)
 
 ---
 
