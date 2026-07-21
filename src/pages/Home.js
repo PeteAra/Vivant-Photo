@@ -1,19 +1,33 @@
 import { useEffect } from 'react';
-import Micki from '../img/home/DSC08462.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Micki from '../img/home/DSC08462.jpg';
 import { transition1 } from '../transitions';
 import PageMeta from '../components/PageMeta';
 import StructuredData from '../components/StructuredData';
-import { PAGE_META } from '../seo/pageMeta';
-import { homeStructuredData } from '../seo/structuredData';
+import GalleriesSection from '../components/GalleriesSection';
 import Footer from '../components/Footer';
 import ChatReveal from '../components/ChatReveal';
+import { PAGE_META } from '../seo/pageMeta';
+import { homeStructuredData } from '../seo/structuredData';
+import { scrollToGalleries } from '../utils/scrollToGalleries';
 
 const bioLinkClass =
   'text-[#912a2d] underline-offset-2 hover:underline transition-colors';
 
 const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash !== '#galleries') return undefined;
+
+    const timer = window.setTimeout(() => {
+      scrollToGalleries();
+    }, 80);
+
+    return () => window.clearTimeout(timer);
+  }, [location.hash, location.pathname]);
+
   useEffect(() => {
     const processEmbeds = () => {
       if (window.instgrm?.Embeds?.process) {
@@ -172,11 +186,9 @@ const Home = () => {
 
           <ChatReveal />
 
-          <div className="home-about-panel flex flex-col items-center px-4 pt-12 pb-14">
-            <Link to="/weddings" className="btn mb-8">
-              View my work
-            </Link>
+          <GalleriesSection />
 
+          <div className="home-about-panel flex flex-col items-center px-4 pt-4 pb-14">
             <div className="mb-8 relative z-10">
               <iframe
                 src="https://www.instagram.com/michaelavivantphoto/embed"

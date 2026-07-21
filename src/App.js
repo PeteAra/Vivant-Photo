@@ -5,19 +5,16 @@ import AnimRoutes from './components/AnimRoutes';
 import SiteVerification from './components/SiteVerification';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ScrollProvider } from './context/ScrollContext';
 
 const App = () => {
   return (
     <HelmetProvider>
-      <ScrollProvider>
-        <Router>
-          <SiteVerification />
-          <GoogleAnalytics />
-          <Header />
-          <AnimRoutes />
-        </Router>
-      </ScrollProvider>
+      <Router>
+        <SiteVerification />
+        <GoogleAnalytics />
+        <Header />
+        <AnimRoutes />
+      </Router>
     </HelmetProvider>
   );
 };

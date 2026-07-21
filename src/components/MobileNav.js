@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { IoMdClose } from 'react-icons/io';
 import { TiThMenu } from 'react-icons/ti';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { handleGalleriesNavClick } from '../utils/scrollToGalleries';
 
 const MobileNav = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const location = useLocation();
 
   const closeMenu = () => setOpenMenu(false);
 
@@ -47,8 +49,14 @@ const MobileNav = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/weddings" onClick={closeMenu}>
-                    Portfolio
+                  <Link
+                    to="/#galleries"
+                    onClick={(event) => {
+                      handleGalleriesNavClick(event, location.pathname);
+                      closeMenu();
+                    }}
+                  >
+                    Galleries
                   </Link>
                 </li>
                 <li>
